@@ -325,9 +325,6 @@
             display: block;
         }
 
-        /* ------------------------------------------------------------------
-   SUBCATEGORY BLOCK (Level 2 accordion)
------------------------------------------------------------------- */
         .subcat-block {
             border-top: var(--border);
         }
@@ -397,9 +394,6 @@
             display: block;
         }
 
-        /* ------------------------------------------------------------------
-   GROUP LABEL (inside subcategory, e.g. "Derribado", "Estado Alterado")
------------------------------------------------------------------- */
         .group-label {
             font-size: 0.65rem;
             font-weight: 700;
@@ -410,9 +404,6 @@
             border-top: 1px solid var(--mid);
         }
 
-        /* ------------------------------------------------------------------
-   LINE ITEM (individual checkbox)
------------------------------------------------------------------- */
         .line-list {
             list-style: none;
             padding: 4px 0 8px 0;
@@ -451,7 +442,6 @@
             outline-offset: -2px;
         }
 
-        /* Checkbox visual */
         .line-check {
             flex-shrink: 0;
             width: 18px;
@@ -474,7 +464,6 @@
             line-height: 1;
         }
 
-        /* Checked state */
         .line-btn.heard {
             background-color: var(--mid);
         }
@@ -502,9 +491,6 @@
             transition: color 0.12s ease;
         }
 
-        /* ------------------------------------------------------------------
-   ACHIEVEMENT BANNER
------------------------------------------------------------------- */
         .achievement-banner {
             position: fixed;
             bottom: 20px;
@@ -565,9 +551,6 @@
             }
         }
 
-        /* ------------------------------------------------------------------
-   MODAL
------------------------------------------------------------------- */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -609,9 +592,6 @@
             justify-content: flex-end;
         }
 
-        /* ------------------------------------------------------------------
-   SEARCH BAR
------------------------------------------------------------------- */
         .search-wrap {
             display: flex;
             align-items: center;
@@ -652,7 +632,6 @@
             opacity: 0.55;
         }
 
-        /* Remove browser default clear button on search inputs */
         .search-input::-webkit-search-cancel-button,
         .search-input::-webkit-search-decoration {
             -webkit-appearance: none;
@@ -684,7 +663,6 @@
             letter-spacing: 0.03em;
         }
 
-        /* Search highlight */
         .line-text mark {
             background-color: var(--gold);
             color: var(--black);
@@ -693,21 +671,14 @@
             font-weight: 600;
         }
 
-        /* Filter hidden (used by search to hide non-matching items) */
         .filter-hidden {
             display: none !important;
         }
 
-        /* ------------------------------------------------------------------
-   UTILITY
------------------------------------------------------------------- */
         .hidden {
             display: none !important;
         }
 
-        /* ------------------------------------------------------------------
-   RESPONSIVE — MOBILE FIRST tweaks
------------------------------------------------------------------- */
         @media (max-width: 500px) {
             .brand-title {
                 font-size: 1.25rem;
@@ -781,7 +752,6 @@
             }
         }
 
-        /* Touch targets — make tapping easy on mobile */
         @media (hover: none) and (pointer: coarse) {
             .line-btn {
                 padding-top: 13px;
@@ -1301,25 +1271,8 @@
             "other-lines-267": "Nice! It's weak to physical attacks!"
         };
 
-        // ==========================================
-        // RISE DATA (INLINED)
-        // ==========================================
-        /**
-         * p4rise200 — Hardcore Risette Fan Tracker
-         * Estructura de datos para las frases únicas de navegación de Rise Kujikawa.
-         *
-         * Traducido al español desde el original en inglés.
-         * Total: 178 planificadas + 89 pasivas = 267 frases
-         *
-         * Cada entrada tiene: { id: "string-único", line: "La frase de voz real" }
-         * Los IDs deben ser únicos en todo el archivo.
-         */
-
         const RISE_DATA = [
 
-            // ============================================================
-            // INICIO DE BATALLA
-            // ============================================================
             {
                 category: "Inicio de Batalla",
                 subcategory: "Emboscada (Enemigo)",
@@ -1372,9 +1325,6 @@
                 ],
             },
 
-            // ============================================================
-            // ANÁLISIS ENEMIGO
-            // ============================================================
             {
                 category: "Análisis Enemigo",
                 subcategory: "Escaneo de Debilidades e Inmunidades",
@@ -1409,9 +1359,6 @@
                 ],
             },
 
-            // ============================================================
-            // PROGRESO DE BATALLA
-            // ============================================================
             {
                 category: "Progreso de Batalla",
                 subcategory: "Enemigos Restantes",
@@ -1431,9 +1378,6 @@
                 ],
             },
 
-            // ============================================================
-            // ACCIONES DE BATALLA
-            // ============================================================
             {
                 category: "Acciones de Batalla",
                 subcategory: "Modo Asalto",
@@ -1488,9 +1432,6 @@
                 ],
             },
 
-            // ============================================================
-            // ENEMIGOS DERROTADOS (PLANIFICADO)
-            // ============================================================
             {
                 category: "Enemigos Derrotados (Planificado)",
                 subcategory: "Dos Enemigos Derrotados",
@@ -1537,9 +1478,6 @@
                 ],
             },
 
-            // ============================================================
-            // EFECTOS DE ESTADO
-            // ============================================================
             {
                 category: "Efectos de Estado",
                 subcategory: "Estadísticas Reducidas",
@@ -1653,9 +1591,6 @@
                 ],
             },
 
-            // ============================================================
-            // ESTADO CRÍTICO
-            // ============================================================
             {
                 category: "Estado Crítico",
                 subcategory: "Miembro del Equipo KO",
@@ -1684,9 +1619,6 @@
                 ],
             },
 
-            // ============================================================
-            // FIN DE BATALLA
-            // ============================================================
             {
                 category: "Fin de Batalla",
                 subcategory: "Victoria",
@@ -1698,9 +1630,6 @@
                 ],
             },
 
-            // ============================================================
-            // REACCIONES DEL EQUIPO
-            // ============================================================
             {
                 category: "Reacciones del Equipo",
                 subcategory: "Golpe Crítico Físico",
@@ -1835,9 +1764,6 @@
                 ],
             },
 
-            // ============================================================
-            // MISCELÁNEA
-            // ============================================================
             {
                 category: "Miscelánea",
                 subcategory: "Otras Frases",
@@ -1849,40 +1775,9 @@
             },
         ];
 
-        /** Total de frases necesarias para el logro */
         const ACHIEVEMENT_TARGET = 250;
-
-        // ==========================================
-        // TRACKER LOGIC
-        // ==========================================
-        /**
-         * P4G — Hardcore Risette Fan Tracker
-         * Main JavaScript entry point (Vite / ES Module)
-         *
-         * Responsibilities:
-         *  - Import the RISE_DATA structure
-         *  - Render the accordion UI dynamically
-         *  - Sync state with localStorage
-         *  - Update the global progress counter
-         */
-
-
-
-        // ─────────────────────────────────────────────
-        // CONSTANTS
-        // ─────────────────────────────────────────────
         const STORAGE_KEY = 'p4rise200_heard';
-
-        // ─────────────────────────────────────────────
-        // STATE
-        // ─────────────────────────────────────────────
-
-        /** @type {Set<string>} Set of line IDs that have been heard */
         let heardSet = new Set();
-
-        // ─────────────────────────────────────────────
-        // TRANSLATION SYSTEM ENGINE
-        // ─────────────────────────────────────────────
 
         function loadLang() {
             currentLang = localStorage.getItem(LANG_STORAGE_KEY) || 'es';
@@ -1961,10 +1856,6 @@
             }
         }
 
-        // ─────────────────────────────────────────────
-        // STORAGE HELPERS
-        // ─────────────────────────────────────────────
-
         function loadState() {
             try {
                 const raw = localStorage.getItem(STORAGE_KEY);
@@ -1980,10 +1871,6 @@
         function saveState() {
             localStorage.setItem(STORAGE_KEY, JSON.stringify([...heardSet]));
         }
-
-        // ─────────────────────────────────────────────
-        // DOM HELPERS
-        // ─────────────────────────────────────────────
 
         function el(tag, attrs = {}, ...children) {
             const node = document.createElement(tag);
@@ -2004,37 +1891,28 @@
             return node;
         }
 
-        // ─────────────────────────────────────────────
-        // PROGRESS UPDATE
-        // ─────────────────────────────────────────────
-
         function updateProgress() {
             const total = ACHIEVEMENT_TARGET;
             const count = heardSet.size;
             const pct = total > 0 ? Math.min(100, Math.round((count / total) * 100)) : 0;
 
-            // Counter
             const countEl = document.getElementById('count-current');
             countEl.textContent = count;
             countEl.classList.remove('bump');
-            void countEl.offsetWidth; // reflow to retrigger animation
+            void countEl.offsetWidth;
             countEl.classList.add('bump');
             setTimeout(() => countEl.classList.remove('bump'), 150);
 
             document.getElementById('count-target').textContent = total;
 
-            // Bar
             const fill = document.getElementById('progress-bar-fill');
             fill.style.width = `${pct}%`;
 
-            // Percent label
             document.getElementById('progress-pct').textContent = `${pct}%`;
 
-            // Aria
             const wrap = document.getElementById('progress-wrap');
             wrap.setAttribute('aria-valuenow', count);
 
-            // Achievement banner
             const banner = document.getElementById('achievement-banner');
             if (count >= total) {
                 banner.classList.remove('hidden');
@@ -2044,13 +1922,8 @@
                 banner.setAttribute('aria-hidden', 'true');
             }
 
-            // Update all sub-badges
             updateAllBadges();
         }
-
-        // ─────────────────────────────────────────────
-        // BADGE COUNTERS (per-category and per-subcat)
-        // ─────────────────────────────────────────────
 
         function countHeardInContainer(container) {
             let total = 0, heard = 0;
@@ -2062,7 +1935,6 @@
         }
 
         function updateAllBadges() {
-            // Category badges
             document.querySelectorAll('.cat-block').forEach(catBlock => {
                 const badge = catBlock.querySelector(':scope > .cat-header .cat-badge');
                 if (badge) {
@@ -2070,7 +1942,7 @@
                     badge.textContent = `${heard} / ${total}`;
                 }
             });
-            // Subcategory badges
+
             document.querySelectorAll('.subcat-block').forEach(subcatBlock => {
                 const badge = subcatBlock.querySelector(':scope > .subcat-header .subcat-badge');
                 if (badge) {
@@ -2079,10 +1951,6 @@
                 }
             });
         }
-
-        // ─────────────────────────────────────────────
-        // LINE TOGGLE
-        // ─────────────────────────────────────────────
 
         function toggleLine(lineId, btn) {
             if (heardSet.has(lineId)) {
@@ -2097,10 +1965,6 @@
             saveState();
             updateProgress();
         }
-
-        // ─────────────────────────────────────────────
-        // ACCORDION HELPERS
-        // ─────────────────────────────────────────────
 
         function toggleAccordion(block, headerEl) {
             const isOpen = block.classList.toggle('open');
@@ -2122,10 +1986,6 @@
                 if (h) h.setAttribute('aria-expanded', 'false');
             });
         }
-
-        // ─────────────────────────────────────────────
-        // RENDER — LINE ITEM
-        // ─────────────────────────────────────────────
 
         function renderLine(lineData) {
             const isHeard = heardSet.has(lineData.id);
@@ -2157,14 +2017,6 @@
             return li;
         }
 
-        // ─────────────────────────────────────────────
-        // RENDER — SUBCATEGORY BLOCK
-        // ─────────────────────────────────────────────
-
-        /**
-         * Groups an array of line entries by their `group` field.
-         * Returns an array of { group, lines[] }
-         */
         function groupByGroup(entries) {
             const map = new Map();
             for (const entry of entries) {
@@ -2182,7 +2034,6 @@
             const block = el('div', { className: 'subcat-block' });
             const translatedSubcatName = (CAT_TEXT[currentLang] && CAT_TEXT[currentLang][subcatName]) || subcatName;
 
-            // Header button
             const header = el('button', {
                 className: 'subcat-header',
                 type: 'button',
@@ -2200,10 +2051,8 @@
             header.appendChild(badge);
             header.addEventListener('click', () => toggleAccordion(block, header));
 
-            // Body
             const body = el('div', { className: 'subcat-body' });
 
-            // Group lines
             const allLines = entries.flatMap(e => e.lines);
             const hasGroups = entries.some(e => e.group !== null);
 
@@ -2228,15 +2077,10 @@
             return block;
         }
 
-        // ─────────────────────────────────────────────
-        // RENDER — CATEGORY BLOCK
-        // ─────────────────────────────────────────────
-
         function renderCategoryBlock(categoryName, subcatMap) {
             const block = el('div', { className: 'cat-block' });
             const translatedCategoryName = (CAT_TEXT[currentLang] && CAT_TEXT[currentLang][categoryName]) || categoryName;
 
-            // Header button
             const header = el('button', {
                 className: 'cat-header',
                 type: 'button',
@@ -2254,7 +2098,6 @@
             header.appendChild(badge);
             header.addEventListener('click', () => toggleAccordion(block, header));
 
-            // Body
             const body = el('div', { className: 'cat-body' });
 
             for (const [subcatName, entries] of subcatMap.entries()) {
@@ -2266,14 +2109,6 @@
             return block;
         }
 
-        // ─────────────────────────────────────────────
-        // BUILD DATA MAP
-        // ─────────────────────────────────────────────
-
-        /**
-         * Transforms flat RISE_DATA array into a nested Map:
-         * Map< category => Map< subcategory => entries[] > >
-         */
         function buildDataMap() {
             const catMap = new Map();
             for (const entry of RISE_DATA) {
@@ -2289,10 +2124,6 @@
             return catMap;
         }
 
-        // ─────────────────────────────────────────────
-        // RENDER ALL
-        // ─────────────────────────────────────────────
-
         function renderTracker() {
             const container = document.getElementById('tracker-container');
             if (!container) return;
@@ -2304,19 +2135,12 @@
                 container.appendChild(renderCategoryBlock(catName, subMap));
             }
 
-            // Initial badge update after render
             updateAllBadges();
         }
-
-        // ─────────────────────────────────────────────
-        // RESET LOGIC
-        // ─────────────────────────────────────────────
 
         function resetAll() {
             heardSet.clear();
             saveState();
-
-            // Re-apply UI state to all buttons without full re-render
             document.querySelectorAll('.line-btn[data-line-id]').forEach(btn => {
                 btn.classList.remove('heard');
                 btn.setAttribute('aria-pressed', 'false');
@@ -2324,10 +2148,6 @@
 
             updateProgress();
         }
-
-        // ─────────────────────────────────────────────
-        // MODAL
-        // ─────────────────────────────────────────────
 
         function initModal() {
             const modal = document.getElementById('reset-modal');
@@ -2358,20 +2178,12 @@
             });
         }
 
-        // ─────────────────────────────────────────────
-        // GLOBAL CONTROLS
-        // ─────────────────────────────────────────────
-
         function initControls() {
             document.getElementById('btn-expand-all')
                 ?.addEventListener('click', openAll);
             document.getElementById('btn-collapse-all')
                 ?.addEventListener('click', collapseAll);
         }
-
-        // ─────────────────────────────────────────────
-        // SEARCH
-        // ─────────────────────────────────────────────
 
         let searchTimeout = null;
 
@@ -2385,7 +2197,6 @@
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(() => performSearch(input.value), 180);
 
-                // Show/hide clear button
                 if (input.value.length > 0) {
                     clearBtn.classList.remove('hidden');
                 } else {
@@ -2401,10 +2212,8 @@
                 input.focus();
             });
 
-            // Ctrl/Cmd+F shortcut to focus search
             document.addEventListener('keydown', (e) => {
                 if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
-                    // Only intercept if not already in an input
                     if (document.activeElement !== input) {
                         e.preventDefault();
                         input.focus();
@@ -2427,31 +2236,26 @@
             const normalizedQuery = trimmed.toLowerCase();
             let matchCount = 0;
 
-            // Process every line item
             document.querySelectorAll('.line-item').forEach(li => {
                 const btn = li.querySelector('.line-btn');
                 const textEl = li.querySelector('.line-text');
                 if (!btn || !textEl) return;
 
                 const lineId = btn.dataset.lineId;
-                // Find the original text from RISE_DATA
                 const original = getOriginalText(lineId) || textEl.textContent;
                 const lower = original.toLowerCase();
                 const idx = lower.indexOf(normalizedQuery);
 
                 if (idx !== -1) {
-                    // Match — show and highlight
                     li.classList.remove('filter-hidden');
                     textEl.innerHTML = highlightMatch(original, idx, trimmed.length);
                     matchCount++;
                 } else {
-                    // No match — hide
                     li.classList.add('filter-hidden');
-                    textEl.textContent = original; // remove any previous highlight
+                    textEl.textContent = original;
                 }
             });
 
-            // Auto-show/hide subcats and cats based on visible children
             document.querySelectorAll('.subcat-block').forEach(subcatBlock => {
                 const hasVisible = subcatBlock.querySelector('.line-item:not(.filter-hidden)');
                 if (hasVisible) {
@@ -2476,7 +2280,6 @@
                 }
             });
 
-            // Update result count
             const resultWord = currentLang === 'en' ? 'result' : 'resultado';
             const pluralSuffix = currentLang === 'en' ? (matchCount !== 1 ? 's' : '') : (matchCount !== 1 ? 's' : '');
             countEl.textContent = `${matchCount} ${resultWord}${pluralSuffix}`;
@@ -2484,12 +2287,9 @@
         }
 
         function clearSearch() {
-            // Remove all filter-hidden classes
             document.querySelectorAll('.filter-hidden').forEach(el => {
                 el.classList.remove('filter-hidden');
             });
-
-            // Restore original text (remove highlights)
             document.querySelectorAll('.line-item').forEach(li => {
                 const btn = li.querySelector('.line-btn');
                 const textEl = li.querySelector('.line-text');
@@ -2499,11 +2299,9 @@
                 if (original) textEl.textContent = original;
             });
 
-            // Collapse everything back
             collapseAll();
         }
 
-        /** Lookup original line text by ID in the current language */
         function getOriginalText(lineId) {
             if (currentLang === 'en' && LINE_EN[lineId]) {
                 return LINE_EN[lineId];
@@ -2516,7 +2314,6 @@
             return null;
         }
 
-        /** Return HTML string with the matching substring wrapped in <mark> */
         function highlightMatch(original, startIndex, length) {
             const before = escapeHtml(original.substring(0, startIndex));
             const match = escapeHtml(original.substring(startIndex, startIndex + length));
@@ -2531,10 +2328,6 @@
                 .replace(/>/g, '&gt;')
                 .replace(/"/g, '&quot;');
         }
-
-        // ─────────────────────────────────────────────
-        // BOOT
-        // ─────────────────────────────────────────────
 
         document.addEventListener('DOMContentLoaded', () => {
             loadState();
