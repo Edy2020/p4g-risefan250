@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+        content="Tracker personal para el logro Hardcore Risette Fan de Persona 4 Golden — 250 frases únicas de navegación de Rise Kujikawa.">
+
+    <title>Hardcore Risette Fan — P4G Tracker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #F5C400;
+            --gold-dark: #C49B00;
+            --gold-light: #FFD740;
+            --black: #0D0D0D;
+            --dark: #1A1A1A;
+            --mid: #2D2D2D;
+            --mid2: #3D3D3D;
+            --light: #BFBFBF;
+            --white: #FFFFFF;
+            --danger: #E53935;
+            --danger-dark: #B71C1C;
+            --checked-bg: #F5C400;
+            --checked-fg: #0D0D0D;
+
+            --font-title: 'Bebas Neue', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            --border: 2px solid var(--mid2);
+            --border-gold: 2px solid var(--gold);
+
+            --radius-sm: 3px;
+            --radius-md: 5px;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #site-header {
+            background-color: var(--gold);
+            border-bottom: 4px solid var(--gold-dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-tag {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            background-color: var(--black);
+            color: var(--gold);
+            padding: 2px 8px;
+            letter-spacing: 0.05em;
+            border-radius: var(--radius-sm);
+        }
+
+        .brand-title {
+            font-family: var(--font-title);
+            font-size: 1.6rem;
+            color: var(--black);
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+
+        .header-subtitle {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--black);
+            opacity: 0.65;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        #progress-hero {
+            background-color: var(--dark);
+            border-bottom: var(--border);
+            padding: 24px 16px;
+        }
+
+        .hero-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .counter-block {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .counter-numbers {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            line-height: 1;
+        }
+
+        .count-current {
+            font-family: var(--font-title);
+            font-size: 4.5rem;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+            transition: transform 0.1s ease;
+        }
+
+        .count-current.bump {
+            transform: scale(1.08);
+        }
+
+        .count-separator {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            color: var(--light);
+        }
+
+        .count-target {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            color: var(--light);
+        }
+
+        .counter-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--light);
+            align-self: flex-end;
+            padding-bottom: 8px;
+        }
+
+        .progress-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .progress-bar-outer {
+            flex: 1;
+            height: 12px;
+            background-color: var(--mid);
+            border: var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            width: 0%;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+            border-radius: var(--radius-sm);
+        }
+
+        .progress-pct {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            color: var(--gold);
+            min-width: 52px;
+            text-align: right;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            background-color: var(--mid);
+            color: var(--white);
+            border: var(--border);
+            border-radius: var(--radius-sm);
+            padding: 7px 14px;
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .action-btn:hover,
+        .action-btn:focus-visible {
+            background-color: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .action-btn--danger {
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .action-btn--danger:hover,
+        .action-btn--danger:focus-visible {
+            background-color: var(--danger);
+            color: var(--white);
+            border-color: var(--danger);
+        }
+
+        #tracker-main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 16px 80px;
+        }
+
+        .cat-block {
+            margin-bottom: 16px;
+            border: var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .cat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background-color: var(--mid);
+            cursor: pointer;
+            user-select: none;
+            gap: 12px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.15s ease;
+        }
+
+        .cat-header:hover {
+            background-color: var(--mid2);
+        }
+
+        .cat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cat-chevron {
+            font-size: 0.7rem;
+            color: var(--gold);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            font-style: normal;
+        }
+
+        .cat-block.open .cat-chevron {
+            transform: rotate(90deg);
+        }
+
+        .cat-title {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+        }
+
+        .cat-badge {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 700;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 2px 7px;
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+            letter-spacing: 0.04em;
+        }
+
+        .cat-body {
+            display: none;
+            background-color: var(--dark);
+        }
+
+        .cat-block.open .cat-body {
+            display: block;
+        }
+
+        /* ------------------------------------------------------------------
+   SUBCATEGORY BLOCK (Level 2 accordion)
+------------------------------------------------------------------ */
+        .subcat-block {
+            border-top: var(--border);
+        }
+
+        .subcat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 16px 11px 28px;
+            background-color: var(--dark);
+            cursor: pointer;
+            user-select: none;
+            gap: 12px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.15s ease;
+        }
+
+        .subcat-header:hover {
+            background-color: var(--mid);
+        }
+
+        .subcat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subcat-chevron {
+            font-size: 0.6rem;
+            color: var(--light);
+            transition: transform 0.2s ease;
+            font-style: normal;
+            flex-shrink: 0;
+        }
+
+        .subcat-block.open .subcat-chevron {
+            transform: rotate(90deg);
+        }
+
+        .subcat-title {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .subcat-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            background-color: var(--mid2);
+            color: var(--light);
+            padding: 2px 6px;
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+        }
+
+        .subcat-body {
+            display: none;
+            background-color: var(--black);
+        }
+
+        .subcat-block.open .subcat-body {
+            display: block;
+        }
+
+        /* ------------------------------------------------------------------
+   GROUP LABEL (inside subcategory, e.g. "Derribado", "Estado Alterado")
+------------------------------------------------------------------ */
+        .group-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-dark);
+            padding: 10px 16px 4px 40px;
+            border-top: 1px solid var(--mid);
+        }
+
+        /* ------------------------------------------------------------------
+   LINE ITEM (individual checkbox)
+------------------------------------------------------------------ */
+        .line-list {
+            list-style: none;
+            padding: 4px 0 8px 0;
+        }
+
+        .line-item {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .line-btn {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            width: 100%;
+            padding: 9px 16px 9px 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.12s ease;
+            border-bottom: 1px solid var(--mid);
+        }
+
+        .line-btn:last-child {
+            border-bottom: none;
+        }
+
+        .line-btn:hover {
+            background-color: var(--mid);
+        }
+
+        .line-btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: -2px;
+        }
+
+        /* Checkbox visual */
+        .line-check {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--mid2);
+            border-radius: var(--radius-sm);
+            background-color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+            transition: background-color 0.12s ease, border-color 0.12s ease;
+        }
+
+        .line-check-mark {
+            display: none;
+            font-size: 11px;
+            color: var(--black);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        /* Checked state */
+        .line-btn.heard {
+            background-color: var(--mid);
+        }
+
+        .line-btn.heard .line-check {
+            background-color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .line-btn.heard .line-check-mark {
+            display: block;
+        }
+
+        .line-btn.heard .line-text {
+            color: var(--light);
+            text-decoration: line-through;
+            text-decoration-color: var(--mid2);
+        }
+
+        .line-text {
+            font-size: 0.82rem;
+            color: var(--white);
+            line-height: 1.45;
+            font-weight: 400;
+            transition: color 0.12s ease;
+        }
+
+        /* ------------------------------------------------------------------
+   ACHIEVEMENT BANNER
+------------------------------------------------------------------ */
+        .achievement-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 200;
+            background-color: var(--gold);
+            color: var(--black);
+            border: 3px solid var(--black);
+            border-radius: var(--radius-md);
+            padding: 14px 24px;
+            min-width: 280px;
+            max-width: 90vw;
+            animation: slideUp 0.3s ease forwards;
+        }
+
+        .achievement-inner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .achievement-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .achievement-text strong {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            letter-spacing: 0.06em;
+        }
+
+        .achievement-text span {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            opacity: 0.7;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateX(-50%) translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ------------------------------------------------------------------
+   MODAL
+------------------------------------------------------------------ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-box {
+            background-color: var(--dark);
+            border: var(--border-gold);
+            border-radius: var(--radius-md);
+            padding: 28px 24px;
+            max-width: 360px;
+            width: 100%;
+        }
+
+        .modal-title {
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 0.04em;
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            font-size: 0.85rem;
+            color: var(--light);
+            margin-bottom: 20px;
+            line-height: 1.55;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        /* ------------------------------------------------------------------
+   SEARCH BAR
+------------------------------------------------------------------ */
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--mid);
+            border: var(--border);
+            border-radius: var(--radius-sm);
+            padding: 6px 12px;
+            transition: border-color 0.15s ease;
+        }
+
+        .search-wrap:focus-within {
+            border-color: var(--gold);
+        }
+
+        .search-icon {
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            opacity: 0.7;
+            line-height: 1;
+        }
+
+        .search-input {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            min-width: 0;
+            padding: 4px 0;
+        }
+
+        .search-input::placeholder {
+            color: var(--light);
+            opacity: 0.55;
+        }
+
+        /* Remove browser default clear button on search inputs */
+        .search-input::-webkit-search-cancel-button,
+        .search-input::-webkit-search-decoration {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .search-clear {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 2px 4px;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: color 0.12s ease;
+        }
+
+        .search-clear:hover {
+            color: var(--gold);
+        }
+
+        .search-count {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.03em;
+        }
+
+        /* Search highlight */
+        .line-text mark {
+            background-color: var(--gold);
+            color: var(--black);
+            border-radius: 2px;
+            padding: 0 2px;
+            font-weight: 600;
+        }
+
+        /* Filter hidden (used by search to hide non-matching items) */
+        .filter-hidden {
+            display: none !important;
+        }
+
+        /* ------------------------------------------------------------------
+   UTILITY
+------------------------------------------------------------------ */
+        .hidden {
+            display: none !important;
+        }
+
+        /* ------------------------------------------------------------------
+   RESPONSIVE — MOBILE FIRST tweaks
+------------------------------------------------------------------ */
+        @media (max-width: 500px) {
+            .brand-title {
+                font-size: 1.25rem;
+            }
+
+            .count-current {
+                font-size: 3.5rem;
+            }
+
+            .count-separator,
+            .count-target {
+                font-size: 2.2rem;
+            }
+
+            .progress-pct {
+                font-size: 1.1rem;
+                min-width: 44px;
+            }
+
+            .subcat-header {
+                padding-left: 16px;
+            }
+
+            .group-label {
+                padding-left: 16px;
+            }
+
+            .line-btn {
+                padding-left: 16px;
+            }
+
+            .cat-title {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                gap: 6px;
+            }
+
+            .action-btn {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+            }
+
+            .search-wrap {
+                padding: 5px 10px;
+            }
+
+            .search-input {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .hero-inner {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .counter-block {
+                flex: 0 0 auto;
+            }
+
+            .progress-wrap {
+                flex: 1 1 200px;
+            }
+
+            .hero-actions {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Touch targets — make tapping easy on mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .line-btn {
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+
+            .cat-header {
+                padding: 16px;
+            }
+
+            .subcat-header {
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+        }
+
+        .header-lang {
+            margin-left: auto;
+        }
+
+        .lang-btn-toggle {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: var(--black);
+            color: var(--gold);
+            border: var(--border-gold);
+            border-radius: var(--radius-sm);
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .lang-btn-toggle:hover,
+        .lang-btn-toggle:focus-visible {
+            background-color: var(--gold);
+            color: var(--black);
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="site-header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <span class="brand-tag">P4G</span>
+                <h1 class="brand-title">Hardcore Risette Fan</h1>
+            </div>
+            <div class="header-subtitle" id="header-subtitle">Rise Kujikawa — Navigator Lines Tracker</div>
+            <div class="header-lang">
+                <button id="btn-lang" class="lang-btn-toggle" type="button" aria-label="Cambiar idioma">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="progress-hero" aria-label="Progreso global del logro">
+        <div class="hero-inner">
+
+            <div class="counter-block">
+                <div class="counter-numbers">
+                    <span id="count-current" class="count-current" aria-live="polite">0</span>
+                    <span class="count-separator">/</span>
+                    <span id="count-target" class="count-target">250</span>
+                </div>
+                <div class="counter-label">frases escuchadas</div>
+            </div>
+
+            <div class="progress-wrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="250"
+                id="progress-wrap">
+                <div class="progress-bar-outer">
+                    <div class="progress-bar-inner" id="progress-bar-fill"></div>
+                </div>
+                <div class="progress-pct" id="progress-pct">0%</div>
+            </div>
+
+            <div class="search-wrap" id="search-wrap">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="search" id="search-input" class="search-input" placeholder="Buscar frase…"
+                    autocomplete="off" spellcheck="false" aria-label="Buscar frase">
+                <button id="search-clear" class="search-clear hidden" type="button"
+                    aria-label="Limpiar búsqueda">✕</button>
+                <span id="search-count" class="search-count hidden" aria-live="polite"></span>
+            </div>
+
+            <div class="hero-actions">
+                <button id="btn-expand-all" class="action-btn" type="button">Expandir Todo</button>
+                <button id="btn-collapse-all" class="action-btn" type="button">Colapsar Todo</button>
+                <button id="btn-reset" class="action-btn action-btn--danger" type="button">Reiniciar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <main id="tracker-main">
+        <div id="tracker-container">
+        </div>
+    </main>
+
+    <div id="achievement-banner" class="achievement-banner hidden" aria-hidden="true" role="status">
+        <div class="achievement-inner">
+            <div class="achievement-icon">★</div>
+            <div class="achievement-text">
+                <strong>¡LOGRO DESBLOQUEADO!</strong>
+                <span>Hardcore Risette Fan</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="reset-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-box">
+            <h2 id="modal-title" class="modal-title">¿Reiniciar progreso?</h2>
+            <p class="modal-body">Se borrarán todas las frases marcadas. Esta acción no se puede deshacer.</p>
+            <div class="modal-actions">
+                <button id="modal-confirm" class="action-btn action-btn--danger" type="button">Sí, reiniciar</button>
+                <button id="modal-cancel" class="action-btn" type="button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const LANG_STORAGE_KEY = 'p4rise200_lang';
+        let currentLang = 'es';
+
+        const UI_TEXT = {
+            es: {
+                subtitle: "Rise Kujikawa — Navigator Lines Tracker",
+                heard: "frases escuchadas",
+                expandAll: "Expandir Todo",
+                collapseAll: "Colapsar Todo",
+                reset: "Reiniciar",
+                searchPlaceholder: "Buscar frase…",
+                resetTitle: "¿Reiniciar progreso?",
+                resetBody: "Se borrarán todas las frases marcadas. Esta acción no se puede deshacer.",
+                resetConfirm: "Sí, reiniciar",
+                resetCancel: "Cancelar",
+                achievementTitle: "¡LOGRO DESBLOQUEADO!",
+                results: "resultado"
+            },
+            en: {
+                subtitle: "Rise Kujikawa — Navigator Lines Tracker",
+                heard: "lines heard",
+                expandAll: "Expand All",
+                collapseAll: "Collapse All",
+                reset: "Reset",
+                searchPlaceholder: "Search lines...",
+                resetTitle: "Reset progress?",
+                resetBody: "All checked lines will be cleared. This action cannot be undone.",
+                resetConfirm: "Yes, reset",
+                resetCancel: "Cancel",
+                achievementTitle: "ACHIEVEMENT UNLOCKED!",
+                results: "result"
+            }
+        };
+
+        const CAT_TEXT = {
+            es: {
+                "Inicio de Batalla": "Inicio de Batalla",
+                "Análisis Enemigo": "Análisis Enemigo",
+                "Progreso de Batalla": "Progreso de Batalla",
+                "Acciones de Batalla": "Acciones de Batalla",
+                "Enemigos Derrotados (Planificado)": "Enemigos Derrotados (Planificado)",
+                "Efectos de Estado": "Efectos de Estado",
+                "Estado Crítico": "Estado Crítico",
+                "Fin de Batalla": "Fin de Batalla",
+                "Reacciones del Equipo": "Reacciones del Equipo",
+                "Miscelánea": "Miscelánea",
+                "Emboscada (Enemigo)": "Emboscada (Enemigo)",
+                "Ataque Preventivo": "Ataque Preventivo",
+                "Encuentro Normal": "Encuentro Normal",
+                "Escaneo de Debilidades e Inmunidades": "Escaneo de Debilidades e Inmunidades",
+                "Enemigos Restantes": "Enemigos Restantes",
+                "Modo Asalto": "Modo Asalto",
+                "Huida": "Huida",
+                "Enemigo Se Levanta": "Enemigo Se Levanta",
+                "Protagonista Se Levanta": "Protagonista Se Levanta",
+                "Mano Rara Encontrada": "Mano Rara Encontrada",
+                "Mano Se Escapa": "Mano Se Escapa",
+                "Dos Enemigos Derrotados": "Dos Enemigos Derrotados",
+                "Tres Enemigos Derrotados": "Tres Enemigos Derrotados",
+                "Cuatro Enemigos Derrotados": "Cuatro Enemigos Derrotados",
+                "Estadísticas Reducidas": "Estadísticas Reducidas",
+                "Debilidad": "Debilidad",
+                "Furia": "Furia",
+                "Pánico": "Pánico",
+                "Agotamiento": "Agotamiento",
+                "Veneno": "Veneno",
+                "Miedo": "Miedo",
+                "Miembro del Equipo KO": "Miembro del Equipo KO",
+                "Advertencia de Salud Baja": "Advertencia de Salud Baja",
+                "Victoria": "Victoria",
+                "Golpe Crítico Físico": "Golpe Crítico Físico",
+                "Esquive": "Esquive",
+                "Enemigo Derrotado (×1)": "Enemigo Derrotado (×1)",
+                "Enemigo Derribado": "Enemigo Derribado",
+                "Enemigo Derrotado (×2)": "Enemigo Derrotado (×2)",
+                "Enemigo Derrotado (×3)": "Enemigo Derrotado (×3)",
+                "Enemigo Derrotado (×4)": "Enemigo Derrotado (×4)",
+                "Otras Frases": "Otras Frases"
+            },
+            en: {
+                "Inicio de Batalla": "Battle Start",
+                "Análisis Enemigo": "Enemy Analysis",
+                "Progreso de Batalla": "Battle Progress",
+                "Acciones de Batalla": "Battle Actions",
+                "Enemigos Derrotados (Planificado)": "Enemies Defeated (Planned)",
+                "Efectos de Estado": "Status Effects",
+                "Estado Crítico": "Critical State",
+                "Fin de Batalla": "Battle End",
+                "Reacciones del Equipo": "Party Reactions",
+                "Miscelánea": "Miscellaneous",
+                "Emboscada (Enemigo)": "Ambushed (Enemy)",
+                "Ataque Preventivo": "Preemptive Strike",
+                "Encuentro Normal": "Normal Encounter",
+                "Escaneo de Debilidades e Inmunidades": "Weakness & Immunity Scan",
+                "Enemigos Restantes": "Enemies Remaining",
+                "Modo Asalto": "Rush Mode",
+                "Huida": "Escape",
+                "Enemigo Se Levanta": "Enemy Stands Up",
+                "Protagonista Se Levanta": "Protagonist Stands Up",
+                "Mano Rara Encontrada": "Rare Hand Encountered",
+                "Mano Se Escapa": "Hand Runs Away",
+                "Dos Enemigos Derrotados": "Two Enemies Defeated",
+                "Tres Enemigos Derrotados": "Three Enemies Defeated",
+                "Cuatro Enemigos Derrotados": "Four Enemies Defeated",
+                "Estadísticas Reducidas": "Stats Lowered",
+                "Debilidad": "Enervation",
+                "Furia": "Rage",
+                "Pánico": "Panic",
+                "Agotamiento": "Exhaustion",
+                "Veneno": "Poison",
+                "Miedo": "Fear",
+                "Miembro del Equipo KO": "Party Member KO",
+                "Advertencia de Salud Baja": "Low Health Warning",
+                "Victoria": "Victory",
+                "Golpe Crítico Físico": "Physical Critical Hit",
+                "Esquive": "Dodge",
+                "Enemigo Derrotado (×1)": "Enemy Defeated (x1)",
+                "Enemigo Derribado": "Enemy Knocked Down",
+                "Enemigo Derrotado (×2)": "Enemy Defeated (x2)",
+                "Enemigo Derrotado (×3)": "Enemy Defeated (x3)",
+                "Enemigo Derrotado (×4)": "Enemy Defeated (x4)",
+                "Otras Frases": "Other Lines"
+            }
+        };
+
+        const LINE_EN = {
+            "ambush-enemy-001": "One enemy! Did they catch us off guard?",
+            "ambush-enemy-002": "Oh! An ambush! One enemy!",
+            "ambush-enemy-003": "An ambush? There are two enemies!",
+            "ambush-enemy-004": "Two enemies have ambushed you! Hold on!",
+            "ambush-enemy-005": "Watch out! Three enemies have ambushed you!",
+            "ambush-enemy-006": "Three enemies? They caught you off guard.",
+            "ambush-enemy-007": "Enemy ambush! Four of them!",
+            "ambush-enemy-008": "Caught off guard? Four enemies.",
+            "ambush-enemy-009": "An ambush? Of five enemies?!",
+            "ambush-enemy-010": "Five enemies have ambushed you! Hold on!",
+            "preemptive-strike-011": "There's one enemy! You get a free hit!",
+            "preemptive-strike-012": "One enemy! Go for the free hit!",
+            "preemptive-strike-013": "There are two enemies. Go for the free hit!",
+            "preemptive-strike-014": "Two enemies, but you have the upper hand!",
+            "preemptive-strike-015": "There are three enemies. They're wide open!",
+            "preemptive-strike-016": "Three enemies! We've got the initiative!",
+            "preemptive-strike-017": "Four enemies. They're wide open!",
+            "preemptive-strike-018": "There are four enemies. You go first!",
+            "preemptive-strike-019": "Five enemies. You caught them off guard!",
+            "preemptive-strike-020": "There are five enemies! Go for the first strike!",
+            "normal-encounter-021": "There's one enemy! Hang in there!",
+            "normal-encounter-022": "One enemy on the field! You can do it!",
+            "normal-encounter-023": "Two enemies on the field! Crush them!",
+            "normal-encounter-024": "There are two enemies! Be careful.",
+            "normal-encounter-025": "There are three enemies. Don't get careless.",
+            "normal-encounter-026": "Three enemies on the field! Watch out!",
+            "normal-encounter-027": "There are four enemies. Keep your guard up!",
+            "normal-encounter-028": "Four enemies on the field! Go get 'em!",
+            "normal-encounter-029": "There are five enemies. Don't let them catch you!",
+            "normal-encounter-030": "F-five enemies on the field! Watch out!",
+            "weakness-immunity-scan-031": "The enemy is weak to fire! So hot!",
+            "weakness-immunity-scan-032": "That enemy is weak to fire!",
+            "weakness-immunity-scan-033": "That enemy is weak to ice! Freeze it!",
+            "weakness-immunity-scan-034": "Nice! One enemy is weak to ice!",
+            "weakness-immunity-scan-035": "It's weak to electricity! Shock it!",
+            "weakness-immunity-scan-036": "Whoa, we've got one weak to electricity!",
+            "weakness-immunity-scan-037": "Great! One enemy is weak to wind!",
+            "weakness-immunity-scan-038": "This one is weak to wind!",
+            "weakness-immunity-scan-039": "Oh, there's one weak to light!",
+            "weakness-immunity-scan-040": "It's weak to light! Shine it on!",
+            "weakness-immunity-scan-041": "Oho! That one is weak to darkness!",
+            "weakness-immunity-scan-042": "The enemy is weak to darkness! It's doomed!",
+            "weakness-immunity-scan-043": "Watch out! It's immune to physical attacks!",
+            "weakness-immunity-scan-044": "Be careful! It's immune to physical attacks!",
+            "weakness-immunity-scan-045": "Watch out! There's an enemy immune to fire!",
+            "weakness-immunity-scan-046": "Hmm, look out! That one is immune to fire!",
+            "weakness-immunity-scan-047": "Wait! That one is immune to ice!",
+            "weakness-immunity-scan-048": "Watch out! An enemy is immune to ice.",
+            "weakness-immunity-scan-049": "Be careful! That one is immune to electricity.",
+            "weakness-immunity-scan-050": "Watch out! It's immune to electricity!",
+            "weakness-immunity-scan-051": "Watch out! That enemy is immune to wind.",
+            "weakness-immunity-scan-052": "Looks like that one is immune to wind!",
+            "weakness-immunity-scan-053": "Oh, watch out! Light doesn't work on this one!",
+            "weakness-immunity-scan-054": "Watch out, there's an enemy immune to light!",
+            "weakness-immunity-scan-055": "Oh no! That one is immune to darkness!",
+            "weakness-immunity-scan-056": "This doesn't look good... Darkness doesn't work!",
+            "enemies-remaining-057": "Only one enemy left! Keep it up!",
+            "enemies-remaining-058": "The last one! Let's go!",
+            "enemies-remaining-059": "Only two left! Come on, it's not over yet!",
+            "enemies-remaining-060": "There are two enemies! Be careful.",
+            "enemies-remaining-061": "Two enemies left! Keep your guard up!",
+            "enemies-remaining-062": "Three of them! Don't give up, okay?",
+            "enemies-remaining-063": "Three enemies left! We can win this!",
+            "enemies-remaining-064": "Four enemies left! Don't give up!",
+            "enemies-remaining-065": "Four of them! You've got to take them down one by one!",
+            "enemies-remaining-066": "Five of them! You're outnumbered!",
+            "enemies-remaining-067": "Five enemies left! Hang in there!",
+            "rush-mode-068": "Hit 'em hard! Keep it up, guys!",
+            "rush-mode-069": "Get 'em! Let's go, let's go, let's go!",
+            "rush-mode-070": "Go for it, guys! Hang in there!",
+            "escape-071": "Okay! I'll look for an opening!",
+            "escape-072": "I know! I'm still looking!",
+            "escape-073": "Wait... I'll find a way out for you!",
+            "escape-074": "Now's your chance! RUN!",
+            "enemy-stands-up-075": "*pant* It got back up! Defeat it quick!",
+            "mc-stands-up-076": "Whew, you're back on your feet! Time to strike back!",
+            "rare-hand-encountered-077": "Ooh, a rare one! Don't let it get away!",
+            "hand-runs-away-078": "Hey, it got away! What a coward!",
+            "two-enemies-down-079": "Two enemies down! Keep it up, Senpai!",
+            "two-enemies-down-080": "Two enemies down! Nice job, Yosuke-senpai!",
+            "two-enemies-down-081": "Two enemies down! Do it again, Chie-senpai!",
+            "two-enemies-down-082": "Two enemies down! Great job, Yukiko-senpai!",
+            "two-enemies-down-083": "Two enemies down! Take them out, Kanji!",
+            "two-enemies-down-084": "Two enemies down! Not bad, Teddie!",
+            "two-enemies-down-085": "Two enemies down! That's the spirit, Naoto-kun!",
+            "two-enemies-down-086": "Two enemies down!",
+            "three-enemies-down-087": "Three enemies down! You did it, Senpai!",
+            "three-enemies-down-088": "Three enemies down! Incredible, Yosuke-senpai!",
+            "three-enemies-down-089": "Three enemies down! Good job, Chie-senpai!",
+            "three-enemies-down-090": "Three enemies down! Wow, Yukiko-senpai!",
+            "three-enemies-down-091": "Three enemies down! That's how it's done, Kanji!",
+            "three-enemies-down-092": "Three enemies down! Crush them, Teddie!",
+            "three-enemies-down-093": "Three enemies down! You did it, Naoto-kun!",
+            "three-enemies-down-094": "Three enemies down!",
+            "four-enemies-down-095": "(Protagonist FOUR Enemies Down Placeholder)",
+            "four-enemies-down-096": "(Yosuke FOUR Enemies Down Placeholder)",
+            "four-enemies-down-097": "(Chie FOUR Enemies Down Placeholder)",
+            "four-enemies-down-098": "(Yukiko FOUR Enemies Down Placeholder)",
+            "four-enemies-down-099": "(Kanji FOUR Enemies Down Placeholder)",
+            "four-enemies-down-100": "Four enemies down! Good job, Teddie!",
+            "four-enemies-down-101": "Four enemies down! Not bad, Naoto-kun!",
+            "four-enemies-down-102": "Four enemies down!",
+            "stats-lowered-103": "Senpai, your attack has gone down!",
+            "stats-lowered-104": "Senpai, your defense has gone down!",
+            "stats-lowered-105": "Senpai, your agility has gone down!",
+            "stats-lowered-106": "Yosuke-senpai, your attack has gone down!",
+            "stats-lowered-107": "Yosuke-senpai, your defense has gone down!",
+            "stats-lowered-108": "Yosuke-senpai, your agility has gone down!",
+            "stats-lowered-109": "Chie-senpai, your attack has gone down!",
+            "stats-lowered-110": "Chie-senpai, your defense has gone down!",
+            "stats-lowered-111": "Chie-senpai, your agility has gone down!",
+            "stats-lowered-112": "Yukiko-senpai! Your attack has gone down!",
+            "stats-lowered-113": "Yukiko-senpai! Your defense has gone down!",
+            "stats-lowered-114": "Yukiko-senpai! Your agility has gone down!",
+            "stats-lowered-115": "Kanji! Your attack has gone down!",
+            "stats-lowered-116": "Kanji! Your defense has gone down!",
+            "stats-lowered-117": "Kanji! Your agility has gone down!",
+            "stats-lowered-118": "Teddie! Your attack has gone down!",
+            "stats-lowered-119": "Teddie! Your defense has gone down!",
+            "stats-lowered-120": "Teddie! Your agility has gone down!",
+            "stats-lowered-121": "Naoto-kun! Your attack has gone down!",
+            "stats-lowered-122": "Naoto-kun! Your defense has gone down!",
+            "stats-lowered-123": "Naoto-kun! Your agility has gone down!",
+            "enervation-124": "Someone help Senpai!",
+            "enervation-125": "Yosuke-senpai is acting weird!",
+            "enervation-126": "Chie-senpai is acting weird!",
+            "enervation-127": "Yukiko-senpai is acting weird!",
+            "enervation-128": "Kanji is acting weird, can someone help him?",
+            "enervation-129": "Teddie is acting weird! You should help him.",
+            "enervation-130": "Naoto-kun is acting weird! Quick, help her!",
+            "rage-131": "(Does protagonist not have a rage message?)",
+            "rage-132": "Yosuke-senpai has lost control!",
+            "rage-133": "Wow! Chie-senpai has completely lost it!",
+            "rage-134": "Wow, Yukiko-senpai is scary when she's mad!",
+            "rage-135": "*pant* Kanji has gone wild!",
+            "rage-136": "Teddie is boiling mad! Calm down!",
+            "rage-137": "Naoto-kun is enraged! Try to calm her down!",
+            "panic-138": "Senpai! Snap out of it!",
+            "panic-139": "Yosuke-senpai is confused!",
+            "panic-140": "Chie-senpai is confused!",
+            "panic-141": "Yukiko-senpai is confused!",
+            "panic-142": "Kanji is confused! Someone help him!",
+            "panic-143": "Teddie is confused! Someone cure him!",
+            "panic-144": "Naoto-kun is confused, can someone cure her?",
+            "exhaustion-145": "Something's wrong... Hang in there, Senpai!",
+            "exhaustion-146": "Yosuke-senpai has been weakened!",
+            "exhaustion-147": "Chie-senpai has been weakened!",
+            "exhaustion-148": "Yukiko-senpai has been weakened!",
+            "exhaustion-149": "Oh, this is bad! Kanji is exhausted!",
+            "exhaustion-150": "Oh, Teddie is completely out of strength!",
+            "exhaustion-151": "Naoto-kun is weakened! Please help her!",
+            "poison-152": "Senpai has been poisoned! Can someone cure him?",
+            "poison-153": "Yosuke-senpai is poisoned!",
+            "poison-154": "Chie-senpai is poisoned!",
+            "poison-155": "Yukiko-senpai is poisoned!",
+            "poison-156": "Kanji is poisoned!",
+            "poison-157": "Oh no! Teddie is poisoned!",
+            "poison-158": "Oh no! Naoto-kun is poisoned!",
+            "fear-159": "No, don't be scared! I'm with you!",
+            "fear-160": "(Yosuke Fear Placeholder)",
+            "fear-161": "Chie-senpai is scared!",
+            "fear-162": "Yukiko-senpai is scared!",
+            "fear-163": "No! Kanji is scared!",
+            "fear-164": "Teddie is scared! Calm down!",
+            "fear-165": "Naoto-kun is scared! Snap out of it!",
+            "party-member-ko-166": "Yosuke-senpai is down! This is bad!",
+            "party-member-ko-167": "Ah! Chie-senpai! Come on, get up!",
+            "party-member-ko-168": "Yukiko-senpai, no! Someone heal her!",
+            "party-member-ko-169": "K-Kanji is down?! Hang in there!",
+            "party-member-ko-170": "Whoa! Teddie! Someone heal him!",
+            "party-member-ko-171": "Naoto-kun has fallen! This isn't good!",
+            "low-health-warning-172": "Uh, Yosuke-senpai? Your health is really low!",
+            "low-health-warning-173": "Guys, Chie-senpai is really hurt!",
+            "low-health-warning-174": "Shouldn't someone heal Yukiko-senpai?",
+            "low-health-warning-175": "Are you okay Kanji? Don't push yourself too hard!",
+            "low-health-warning-176": "Careful, guys. Teddie's health is really low!",
+            "low-health-warning-177": "Naoto-kun is in pretty bad shape, can you heal her?",
+            "low-health-warning-178": "Careful guys! Your health is really low!",
+            "victory-179": "Great, we won! We did it!",
+            "victory-180": "Nice job!",
+            "victory-181": "Yaaaay! We won! Congrats, guys!",
+            "physical-critical-hit-182": "Go Senpai! Keep the streak going!",
+            "physical-critical-hit-183": "Ooh, nice hit. Great move, Yosuke-senpai!",
+            "physical-critical-hit-184": "Now that's a hit!",
+            "physical-critical-hit-185": "I think we just saw Yukiko-senpai's true colors!",
+            "physical-critical-hit-186": "That's it, Kanji! Time for mayhem!",
+            "physical-critical-hit-187": "(Teddie placeholder)",
+            "physical-critical-hit-188": "Enemy down! Feasting time, Naoto-kun!",
+            "physical-critical-hit-189": "What a clean hit!",
+            "dodge-190": "*screams* Senpai, that was awesome!",
+            "dodge-191": "Nice move, Yosuke-senpai!",
+            "dodge-192": "Just what I'd expect from you, Chie-senpai! Woo!",
+            "dodge-193": "Incredible, Yukiko-senpai, keep it up!",
+            "dodge-194": "Wow, Kanji! That was cool!",
+            "dodge-195": "Hey, not bad, Teddie! Keep it up!",
+            "dodge-196": "Nice move, Naoto-kun! You're on a roll!",
+            "enemy-defeated-1-197": "Go Senpai! You're the best!",
+            "enemy-defeated-1-198": "Enemy defeated! Good start! (Protagonist)",
+            "enemy-defeated-1-199": "That's it, Senpai! You've got me really pumped!",
+            "enemy-defeated-1-200": "Wow! That was awesome, Yosuke-senpai!",
+            "enemy-defeated-1-201": "Yosuke-senpai was cool? No way!",
+            "enemy-defeated-1-202": "Enemy defeated! Keep it up, Yosuke-senpai!",
+            "enemy-defeated-1-203": "Go Chie-senpai, go! Kick 'em!",
+            "enemy-defeated-1-204": "Ouch! That's gotta hurt! (Chie)",
+            "enemy-defeated-1-205": "Enemy defeated! That's the spirit, Chie-senpai!",
+            "enemy-defeated-1-206": "Yukiko-senpai defeats the enemy with style!",
+            "enemy-defeated-1-207": "Yukiko-senpai?! Wow, if looks could kill...",
+            "enemy-defeated-1-208": "Enemy defeated! Well done, Yukiko-senpai!",
+            "enemy-defeated-1-209": "Enemy defeated! Keep up the good work, Kanji!",
+            "enemy-defeated-1-210": "Didn't expect that from you, Kanji, well done!",
+            "enemy-defeated-1-211": "That was awesome, Kanji! You're the best!",
+            "enemy-defeated-1-212": "Look at you, Teddie! You're in top form!",
+            "enemy-defeated-1-213": "Good job, Teddie! Keep it up!",
+            "enemy-defeated-1-214": "Enemy defeated! Give it your all, Teddie!",
+            "enemy-defeated-1-215": "Wow Naoto-kun, you never lose your cool!",
+            "enemy-defeated-1-216": "Enemy defeated! Don't stop now, Naoto-kun",
+            "enemy-defeated-1-217": "Naoto-kun is busting heads and doing it in style!",
+            "enemy-knocked-down-218": "Great, Senpai! Go finish it!",
+            "enemy-knocked-down-219": "Enemy down! Nice move, Senpai!",
+            "enemy-knocked-down-220": "Incredible, Senpai! What a hit!",
+            "enemy-knocked-down-221": "Ooooh, Senpai! That was perfect!",
+            "enemy-knocked-down-222": "Way to go, Yosuke-senpai! You're the best!",
+            "enemy-knocked-down-223": "You hit their weakness, Yosuke-senpai!",
+            "enemy-knocked-down-224": "Wow! That was awesome, Yosuke-senpai!",
+            "enemy-knocked-down-225": "Enemy down! Way to go, Yosuke-senpai!",
+            "enemy-knocked-down-226": "You hit their weak spot, Chie-senpai!",
+            "enemy-knocked-down-227": "Now that's a hit!",
+            "enemy-knocked-down-228": "Yaaaay! Chie-senpai is going to finish it!",
+            "enemy-knocked-down-229": "Enemy down! You did it, Chie-senpai!",
+            "enemy-knocked-down-230": "Enemy down! Great job, Yukiko-senpai!",
+            "enemy-knocked-down-231": "You hit their weakness, Yukiko-senpai!",
+            "enemy-knocked-down-232": "Yukiko-senpai defeats the enemy with style!",
+            "enemy-knocked-down-233": "Go Yukiko-senpai! Give them more!",
+            "enemy-knocked-down-234": "A direct hit to their weakness! Go Kanji!",
+            "enemy-knocked-down-235": "Enemy down! Show them what you're made of, Kanji!",
+            "enemy-knocked-down-236": "Oh, nice! Great move, Kanji!",
+            "enemy-knocked-down-237": "(Kanji one enemy knocked down placeholder)",
+            "enemy-knocked-down-238": "Not bad, Teddie!",
+            "enemy-knocked-down-239": "Good job, Teddie! Keep it up!",
+            "enemy-knocked-down-240": "Enemy down! That's the spirit, Teddie!",
+            "enemy-knocked-down-241": "Come on, Teddie! Don't stop!",
+            "enemy-knocked-down-242": "Wow, Naoto-kun! You never lose your cool!",
+            "enemy-knocked-down-243": "You hit their weakness! Nice move, Naoto-kun!",
+            "enemy-knocked-down-244": "Way to go, Naoto-kun! Nothing escapes you!",
+            "enemy-defeated-2-245": "You're on a roll, Senpai! Two defeated!",
+            "enemy-defeated-2-246": "Keep it up, Yosuke-senpai! Two defeated!",
+            "enemy-defeated-2-247": "Wow, Chie-senpai! Two defeated!",
+            "enemy-defeated-2-248": "(Yukiko TWO Enemies Defeated Placeholder)",
+            "enemy-defeated-2-249": "Kanji defeated two enemies! Go team!",
+            "enemy-defeated-2-250": "What moves, Teddie! Two defeated!",
+            "enemy-defeated-2-251": "Wow Naoto-kun! You defeated two enemies!",
+            "enemy-defeated-3-252": "Three enemies defeated! You're so cool, Senpai!",
+            "enemy-defeated-3-253": "Three enemies defeated! Let's go, Yosuke-senpai!",
+            "enemy-defeated-3-254": "Three enemies defeated! Incredible, Chie-senpai!",
+            "enemy-defeated-3-255": "Three enemies defeated! Great, Yukiko-senpai!",
+            "enemy-defeated-3-256": "Placeholder",
+            "enemy-defeated-3-257": "Three enemies defeated! Good boy, Teddie!",
+            "enemy-defeated-3-258": "(Naoto THREE Enemies Defeated Placeholder)",
+            "enemy-defeated-4-259": "Incredible, Senpai! Four enemies defeated!",
+            "enemy-defeated-4-260": "Great job, Yosuke-senpai! Four defeated!",
+            "enemy-defeated-4-261": "(Chie FOUR Enemies Defeated Placeholder)",
+            "enemy-defeated-4-262": "(Yukiko FOUR Enemies Defeated Placeholder)",
+            "enemy-defeated-4-263": "Not bad, Kanji! Four enemies defeated!",
+            "enemy-defeated-4-264": "(Teddie FOUR Enemies Defeated Placeholder)",
+            "enemy-defeated-4-265": "That was cool, Naoto-kun! Four enemies defeated!",
+            "other-lines-266": "Ooh! That one doesn't like physical attacks!",
+            "other-lines-267": "Nice! It's weak to physical attacks!"
+        };
+
+        // ==========================================
+        // RISE DATA (INLINED)
+        // ==========================================
+        /**
+         * p4rise200 — Hardcore Risette Fan Tracker
+         * Estructura de datos para las frases únicas de navegación de Rise Kujikawa.
+         *
+         * Traducido al español desde el original en inglés.
+         * Total: 178 planificadas + 89 pasivas = 267 frases
+         *
+         * Cada entrada tiene: { id: "string-único", line: "La frase de voz real" }
+         * Los IDs deben ser únicos en todo el archivo.
+         */
+
+        const RISE_DATA = [
+
+            // ============================================================
+            // INICIO DE BATALLA
+            // ============================================================
+            {
+                category: "Inicio de Batalla",
+                subcategory: "Emboscada (Enemigo)",
+                group: null,
+                lines: [
+                    { id: "ambush-enemy-001", line: "Un enemigo. ¿Nos tomó por sorpresa?" },
+                    { id: "ambush-enemy-002", line: "¡Ay, una emboscada! ¡Un enemigo!" },
+                    { id: "ambush-enemy-003", line: "¿Una emboscada? Hay 2 enemigos" },
+                    { id: "ambush-enemy-004", line: "¡Dos enemigos os han emboscado! ¡Aguantad!" },
+                    { id: "ambush-enemy-005", line: "¡Cuidado! ¡Tres enemigos os han emboscado!" },
+                    { id: "ambush-enemy-006", line: "¿3 enemigos? Os pillaron desprevenidos" },
+                    { id: "ambush-enemy-007", line: "Emboscada enemiga, cuatro de ellos." },
+                    { id: "ambush-enemy-008", line: "¿Os pillaron desprevenidos? Cuatro enemigos" },
+                    { id: "ambush-enemy-009", line: "¿Una emboscada? ¿De cinco enemigos?" },
+                    { id: "ambush-enemy-010", line: "¡5 enemigos os emboscaron! ¡Aguantad!" },
+                ],
+            },
+            {
+                category: "Inicio de Batalla",
+                subcategory: "Ataque Preventivo",
+                group: null,
+                lines: [
+                    { id: "preemptive-strike-011", line: "Hay un enemigo, tienes un golpe gratis." },
+                    { id: "preemptive-strike-012", line: "Un enemigo. Aprovecha tu golpe gratis" },
+                    { id: "preemptive-strike-013", line: "Hay dos enemigos, ve por el golpe gratis" },
+                    { id: "preemptive-strike-014", line: "Dos enemigos, pero lleváis la ventaja." },
+                    { id: "preemptive-strike-015", line: "Hay tres enemigos. ¡Están totalmente expuestos!" },
+                    { id: "preemptive-strike-016", line: "Tres enemigos. ¡Tenemos la iniciativa!" },
+                    { id: "preemptive-strike-017", line: "Cuatro enemigos. Están muy abiertos." },
+                    { id: "preemptive-strike-018", line: "Hay cuatro enemigos. ¡Vosotros vais primero!" },
+                    { id: "preemptive-strike-019", line: "Cinco enemigos. Los pillasteis desprevenidos." },
+                    { id: "preemptive-strike-020", line: "¡Hay cinco enemigos! ¡Ve por el primer golpe!" },
+                ],
+            },
+            {
+                category: "Inicio de Batalla",
+                subcategory: "Encuentro Normal",
+                group: null,
+                lines: [
+                    { id: "normal-encounter-021", line: "Hay un enemigo, aguanta ahí" },
+                    { id: "normal-encounter-022", line: "¡Un enemigo en el campo, tú puedes!" },
+                    { id: "normal-encounter-023", line: "¡Dos enemigos en el campo! ¡Aplastadlos!" },
+                    { id: "normal-encounter-024", line: "¡Hay dos enemigos! Con cuidado." },
+                    { id: "normal-encounter-025", line: "Hay tres enemigos, no te confíes" },
+                    { id: "normal-encounter-026", line: "¡Tres enemigos en el campo, ten cuidado!" },
+                    { id: "normal-encounter-027", line: "Hay cuatro enemigos. ¡Mantened la guardia!" },
+                    { id: "normal-encounter-028", line: "Cuatro enemigos en el campo. ¡A por ello!" },
+                    { id: "normal-encounter-029", line: "Hay cinco enemigos. No os dejen atrapar." },
+                    { id: "normal-encounter-030", line: "C-cinco enemigos en el campo. ¡Con cuidado!" },
+                ],
+            },
+
+            // ============================================================
+            // ANÁLISIS ENEMIGO
+            // ============================================================
+            {
+                category: "Análisis Enemigo",
+                subcategory: "Escaneo de Debilidades e Inmunidades",
+                group: null,
+                lines: [
+                    { id: "weakness-immunity-scan-031", line: "¡El enemigo es débil al fuego! ¡Qué caliente!" },
+                    { id: "weakness-immunity-scan-032", line: "¡Ese enemigo es débil al fuego!" },
+                    { id: "weakness-immunity-scan-033", line: "¡Ese enemigo es débil al hielo! ¡Congélalo!" },
+                    { id: "weakness-immunity-scan-034", line: "¡Genial! ¡Hay un enemigo débil al hielo!" },
+                    { id: "weakness-immunity-scan-035", line: "¡Es débil a la electricidad! ¡Electrocútalo!" },
+                    { id: "weakness-immunity-scan-036", line: "¡Vaya, tenemos uno débil a la electricidad!" },
+                    { id: "weakness-immunity-scan-037", line: "¡Bien! ¡Hay un enemigo débil al viento!" },
+                    { id: "weakness-immunity-scan-038", line: "¡Este es débil al viento!" },
+                    { id: "weakness-immunity-scan-039", line: "¡Ah, hay un enemigo débil a la luz!" },
+                    { id: "weakness-immunity-scan-040", line: "¡Es débil a la luz! ¡Ilumínalo!" },
+                    { id: "weakness-immunity-scan-041", line: "¡Oho! ¡Ese es débil a la oscuridad!" },
+                    { id: "weakness-immunity-scan-042", line: "¡El enemigo es débil a la oscuridad! ¡Está condenado!" },
+                    { id: "weakness-immunity-scan-043", line: "¡Cuidado! ¡Es inmune a los ataques físicos!" },
+                    { id: "weakness-immunity-scan-044", line: "¡Ojo! ¡Es inmune a los ataques físicos!" },
+                    { id: "weakness-immunity-scan-045", line: "¡Cuidado! ¡Hay un enemigo inmune al fuego!" },
+                    { id: "weakness-immunity-scan-046", line: "Hm, ¡ojo! ¡Ese es inmune al fuego!" },
+                    { id: "weakness-immunity-scan-047", line: "¡Espera! ¡Ese es inmune al hielo!" },
+                    { id: "weakness-immunity-scan-048", line: "¡Cuidado! Hay un enemigo inmune al hielo" },
+                    { id: "weakness-immunity-scan-049", line: "¡Ojo! Ese es inmune a la electricidad" },
+                    { id: "weakness-immunity-scan-050", line: "¡Cuidado! ¡Es inmune a la electricidad!" },
+                    { id: "weakness-immunity-scan-051", line: "¡Cuidado! Ese enemigo es inmune al viento." },
+                    { id: "weakness-immunity-scan-052", line: "¡Parece que ese es inmune al viento!" },
+                    { id: "weakness-immunity-scan-053", line: "¡Oh, cuidado! ¡La luz no sirve contra este!" },
+                    { id: "weakness-immunity-scan-054", line: "¡Cuidado, hay un enemigo inmune a la luz!" },
+                    { id: "weakness-immunity-scan-055", line: "¡Ay no! ¡Ese es inmune a la oscuridad!" },
+                    { id: "weakness-immunity-scan-056", line: "Esto no pinta bien... ¡La oscuridad no funciona!" },
+                ],
+            },
+
+            // ============================================================
+            // PROGRESO DE BATALLA
+            // ============================================================
+            {
+                category: "Progreso de Batalla",
+                subcategory: "Enemigos Restantes",
+                group: null,
+                lines: [
+                    { id: "enemies-remaining-057", line: "¡Solo queda un enemigo! ¡Sigue así!" },
+                    { id: "enemies-remaining-058", line: "¡El último! ¡Vamos!" },
+                    { id: "enemies-remaining-059", line: "¡Solo quedan dos! ¡Vamos, esto no ha terminado!" },
+                    { id: "enemies-remaining-060", line: "¡Hay dos enemigos! Con cuidado." },
+                    { id: "enemies-remaining-061", line: "¡Quedan dos enemigos! ¡No bajéis la guardia!" },
+                    { id: "enemies-remaining-062", line: "¡Tres de ellos! No os rendáis, ¿de acuerdo?" },
+                    { id: "enemies-remaining-063", line: "¡Quedan tres enemigos! ¡Podemos ganar esto!" },
+                    { id: "enemies-remaining-064", line: "¡Quedan cuatro enemigos! ¡No os rindáis!" },
+                    { id: "enemies-remaining-065", line: "¡Cuatro de ellos! ¡Tenéis que ir eliminándolos!" },
+                    { id: "enemies-remaining-066", line: "¡Cinco de ellos! ¡Estáis superados en número!" },
+                    { id: "enemies-remaining-067", line: "¡Quedan cinco enemigos! ¡Aguantad!" },
+                ],
+            },
+
+            // ============================================================
+            // ACCIONES DE BATALLA
+            // ============================================================
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Modo Asalto",
+                group: null,
+                lines: [
+                    { id: "rush-mode-068", line: "¡Dadle duro! ¡Seguid así chicos!" },
+                    { id: "rush-mode-069", line: "¡A por ellos! ¡Vamos vamos vamos!" },
+                    { id: "rush-mode-070", line: "¡Ánimo chicos! ¡Aguantad!" },
+                ],
+            },
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Huida",
+                group: null,
+                lines: [
+                    { id: "escape-071", line: "¡Bien! Buscaré una apertura" },
+                    { id: "escape-072", line: "¡Ya lo sé! ¡Sigo buscando!" },
+                    { id: "escape-073", line: "Esperad... ¡Os buscaré una salida!" },
+                    { id: "escape-074", line: "¡Ahora es vuestra oportunidad, CORRED!" },
+                ],
+            },
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Enemigo Se Levanta",
+                group: null,
+                lines: [
+                    { id: "enemy-stands-up-075", line: "*jadea* ¡Se levantó! ¡Derrotadlo rápido!" },
+                ],
+            },
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Protagonista Se Levanta",
+                group: null,
+                lines: [
+                    { id: "mc-stands-up-076", line: "¡Uf, estás en pie! ¡Es hora del contraataque!" },
+                ],
+            },
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Mano Rara Encontrada",
+                group: null,
+                lines: [
+                    { id: "rare-hand-encountered-077", line: "¡Ooh, uno raro! ¡No lo dejes escapar!" },
+                ],
+            },
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Mano Se Escapa",
+                group: null,
+                lines: [
+                    { id: "hand-runs-away-078", line: "¡Oye, se escapó! ¡Qué caradurismo el suyo!" },
+                ],
+            },
+
+            // ============================================================
+            // ENEMIGOS DERROTADOS (PLANIFICADO)
+            // ============================================================
+            {
+                category: "Enemigos Derrotados (Planificado)",
+                subcategory: "Dos Enemigos Derrotados",
+                group: null,
+                lines: [
+                    { id: "two-enemies-down-079", line: "¡Dos enemigos derrotados! ¡Sigue así senpai!" },
+                    { id: "two-enemies-down-080", line: "¡Dos enemigos derrotados! ¡Bien hecho Yosuke-senpai!" },
+                    { id: "two-enemies-down-081", line: "¡Dos enemigos derrotados! ¡Hazlo de nuevo, Chie-senpai!" },
+                    { id: "two-enemies-down-082", line: "¡Dos enemigos derrotados! ¡Genial Yukiko-senpai!" },
+                    { id: "two-enemies-down-083", line: "¡Dos enemigos derrotados! ¡Elimínalos Kanji!" },
+                    { id: "two-enemies-down-084", line: "¡Dos enemigos derrotados! ¡Nada mal Teddie!" },
+                    { id: "two-enemies-down-085", line: "¡Dos enemigos derrotados! ¡Ese es el espíritu, Naoto-kun!" },
+                    { id: "two-enemies-down-086", line: "¡Dos enemigos derrotados!" },
+                ],
+            },
+            {
+                category: "Enemigos Derrotados (Planificado)",
+                subcategory: "Tres Enemigos Derrotados",
+                group: null,
+                lines: [
+                    { id: "three-enemies-down-087", line: "¡Tres enemigos derrotados! ¡Lo lograste senpai!" },
+                    { id: "three-enemies-down-088", line: "¡Tres enemigos derrotados! ¡Increíble Yosuke-senpai!" },
+                    { id: "three-enemies-down-089", line: "¡Tres enemigos derrotados! ¡Buen trabajo Chie-senpai!" },
+                    { id: "three-enemies-down-090", line: "¡Tres enemigos derrotados! ¡Vaya Yukiko-senpai!" },
+                    { id: "three-enemies-down-091", line: "¡Tres enemigos derrotados! ¡Así se hace Kanji!" },
+                    { id: "three-enemies-down-092", line: "¡Tres enemigos derrotados! ¡Machácalos Teddie!" },
+                    { id: "three-enemies-down-093", line: "¡Tres enemigos derrotados! ¡Lo lograste Naoto-kun!" },
+                    { id: "three-enemies-down-094", line: "¡Tres enemigos derrotados!" },
+                ],
+            },
+            {
+                category: "Enemigos Derrotados (Planificado)",
+                subcategory: "Cuatro Enemigos Derrotados",
+                group: null,
+                lines: [
+                    { id: "four-enemies-down-095", line: "(Protagonista CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "four-enemies-down-096", line: "(Yosuke CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "four-enemies-down-097", line: "(Chie CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "four-enemies-down-098", line: "(Yukiko CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "four-enemies-down-099", line: "(Kanji CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "four-enemies-down-100", line: "¡Cuatro enemigos derrotados! ¡Buen trabajo, Teddie!" },
+                    { id: "four-enemies-down-101", line: "¡Cuatro enemigos derrotados! ¡Nada mal, Naoto-kun!" },
+                    { id: "four-enemies-down-102", line: "¡Cuatro enemigos derrotados!" },
+                ],
+            },
+
+            // ============================================================
+            // EFECTOS DE ESTADO
+            // ============================================================
+            {
+                category: "Efectos de Estado",
+                subcategory: "Estadísticas Reducidas",
+                group: null,
+                lines: [
+                    { id: "stats-lowered-103", line: "¡Senpai, tu ataque ha bajado!" },
+                    { id: "stats-lowered-104", line: "¡Senpai, tu defensa ha bajado!" },
+                    { id: "stats-lowered-105", line: "¡Senpai, tu agilidad ha bajado!" },
+                    { id: "stats-lowered-106", line: "¡Yosuke-senpai, tu ataque está bajo!" },
+                    { id: "stats-lowered-107", line: "¡Yosuke-senpai, tu defensa está bajo!" },
+                    { id: "stats-lowered-108", line: "¡Yosuke-senpai, tu agilidad está bajo!" },
+                    { id: "stats-lowered-109", line: "¡Chie-senpai, tu ataque está bajo!" },
+                    { id: "stats-lowered-110", line: "¡Chie-senpai, tu defensa está bajo!" },
+                    { id: "stats-lowered-111", line: "¡Chie-senpai, tu agilidad está bajo!" },
+                    { id: "stats-lowered-112", line: "¡Yukiko-senpai! ¡Tu ataque está bajo!" },
+                    { id: "stats-lowered-113", line: "¡Yukiko-senpai! ¡Tu defensa está bajo!" },
+                    { id: "stats-lowered-114", line: "¡Yukiko-senpai! ¡Tu agilidad está bajo!" },
+                    { id: "stats-lowered-115", line: "¡Kanji! ¡Tu ataque ha bajado!" },
+                    { id: "stats-lowered-116", line: "¡Kanji! ¡Tu defensa ha bajado!" },
+                    { id: "stats-lowered-117", line: "¡Kanji! ¡Tu agilidad ha bajado!" },
+                    { id: "stats-lowered-118", line: "¡Teddie! ¡Tu ataque ha bajado!" },
+                    { id: "stats-lowered-119", line: "¡Teddie! ¡Tu defensa ha bajado!" },
+                    { id: "stats-lowered-120", line: "¡Teddie! ¡Tu agilidad ha bajado!" },
+                    { id: "stats-lowered-121", line: "¡Naoto-kun! ¡Tu ataque está bajo!" },
+                    { id: "stats-lowered-122", line: "¡Naoto-kun! ¡Tu defensa está bajo!" },
+                    { id: "stats-lowered-123", line: "¡Naoto-kun! ¡Tu agilidad está bajo!" },
+                ],
+            },
+            {
+                category: "Efectos de Estado",
+                subcategory: "Debilidad",
+                group: null,
+                lines: [
+                    { id: "enervation-124", line: "¡Alguien ayude a Senpai!" },
+                    { id: "enervation-125", line: "¡Yosuke-senpai está actuando raro!" },
+                    { id: "enervation-126", line: "¡Chie-senpai está actuando raro!" },
+                    { id: "enervation-127", line: "¡Yukiko-senpai está actuando raro!" },
+                    { id: "enervation-128", line: "Kanji está actuando raro, ¿alguien puede ayudarle?" },
+                    { id: "enervation-129", line: "¡Teddie está actuando raro! Deberías ayudarle." },
+                    { id: "enervation-130", line: "¡Naoto-kun está actuando raro! ¡Rápido, ayudadla!" },
+                ],
+            },
+            {
+                category: "Efectos de Estado",
+                subcategory: "Furia",
+                group: null,
+                lines: [
+                    { id: "rage-131", line: "(¿El protagonista no tiene mensaje de furia?)" },
+                    { id: "rage-132", line: "¡Yosuke-senpai se ha descontrolado!" },
+                    { id: "rage-133", line: "¡Vaya! ¡Chie-senpai se ha descontrolado por completo!" },
+                    { id: "rage-134", line: "¡Vaya, Yukiko-senpai da miedo cuando se enfada!" },
+                    { id: "rage-135", line: "*jadea* ¡Kanji se ha vuelto loco!" },
+                    { id: "rage-136", line: "¡Teddie está que echa chispas! ¡Cálmate!" },
+                    { id: "rage-137", line: "¡Naoto-kun está enfurecida! ¡Intentad calmarla!!" },
+                ],
+            },
+            {
+                category: "Efectos de Estado",
+                subcategory: "Pánico",
+                group: null,
+                lines: [
+                    { id: "panic-138", line: "¡Senpai! ¡Reacciona!" },
+                    { id: "panic-139", line: "¡Yosuke-senpai está confundido!" },
+                    { id: "panic-140", line: "¡Chie-senpai está confundida!" },
+                    { id: "panic-141", line: "¡Yukiko-senpai está confundida!" },
+                    { id: "panic-142", line: "¡Kanji está confundido! ¡Alguien ayúdele!" },
+                    { id: "panic-143", line: "¡Teddie está confundido! ¡Alguien cúrele!" },
+                    { id: "panic-144", line: "Naoto-kun está confundida, ¿alguien puede curarla?" },
+                ],
+            },
+            {
+                category: "Efectos de Estado",
+                subcategory: "Agotamiento",
+                group: null,
+                lines: [
+                    { id: "exhaustion-145", line: "Algo va mal... ¡Aguanta Senpai!" },
+                    { id: "exhaustion-146", line: "¡Han debilitado a Yosuke-senpai!" },
+                    { id: "exhaustion-147", line: "¡Han debilitado a Chie-senpai!" },
+                    { id: "exhaustion-148", line: "¡Han debilitado a Yukiko-senpai!" },
+                    { id: "exhaustion-149", line: "¡Ay, esto es malo! ¡Kanji está inutilizado!" },
+                    { id: "exhaustion-150", line: "¡Vaya, Teddie se ha quedado sin fuerzas!" },
+                    { id: "exhaustion-151", line: "¡Naoto-kun está debilitada! ¡Por favor ayudadla!" },
+                ],
+            },
+            {
+                category: "Efectos de Estado",
+                subcategory: "Veneno",
+                group: null,
+                lines: [
+                    { id: "poison-152", line: "¡Senpai ha sido envenenado! ¿Alguien puede curarle?" },
+                    { id: "poison-153", line: "¡Yosuke-senpai está envenenado!" },
+                    { id: "poison-154", line: "¡Chie-senpai está envenenada!" },
+                    { id: "poison-155", line: "¡Yukiko-senpai está envenenada!" },
+                    { id: "poison-156", line: "¡Kanji está envenenado!" },
+                    { id: "poison-157", line: "¡Oh no! ¡Teddie está envenenado!" },
+                    { id: "poison-158", line: "¡Ay no! ¡Naoto-kun está envenenada!" },
+                ],
+            },
+            {
+                category: "Efectos de Estado",
+                subcategory: "Miedo",
+                group: null,
+                lines: [
+                    { id: "fear-159", line: "¡No, no te asustes! ¡Estoy contigo!" },
+                    { id: "fear-160", line: "(Yosuke Miedo Placeholder)" },
+                    { id: "fear-161", line: "¡Chie-senpai tiene miedo!" },
+                    { id: "fear-162", line: "¡Yukiko-senpai tiene miedo!" },
+                    { id: "fear-163", line: "¡No! ¡Kanji tiene miedo!" },
+                    { id: "fear-164", line: "¡Teddie tiene miedo! ¡Cálmate!" },
+                    { id: "fear-165", line: "¡Naoto-kun tiene miedo! ¡Reacciona!" },
+                ],
+            },
+
+            // ============================================================
+            // ESTADO CRÍTICO
+            // ============================================================
+            {
+                category: "Estado Crítico",
+                subcategory: "Miembro del Equipo KO",
+                group: null,
+                lines: [
+                    { id: "party-member-ko-166", line: "¡Yosuke-senpai está herido! ¡Esto es grave!" },
+                    { id: "party-member-ko-167", line: "¡Ay! ¡Chie-senpai! ¡Vamos, levántate!" },
+                    { id: "party-member-ko-168", line: "¡Yukiko-senpai, no! ¡Alguien cúrala!" },
+                    { id: "party-member-ko-169", line: "¿K-Kanji está herido?! ¡Algo así como aguanta!" },
+                    { id: "party-member-ko-170", line: "¡Uy! ¡Teddie! ¡Alguien cúrale!" },
+                    { id: "party-member-ko-171", line: "¡Naoto-kun se ha caído! ¡Esto no está bien!" },
+                ],
+            },
+            {
+                category: "Estado Crítico",
+                subcategory: "Advertencia de Salud Baja",
+                group: null,
+                lines: [
+                    { id: "low-health-warning-172", line: "Eh, ¿Yosuke-senpai? ¡Tienes la salud muy baja!" },
+                    { id: "low-health-warning-173", line: "¡Chicos, Chie-senpai está muy herida!" },
+                    { id: "low-health-warning-174", line: "¿No debería alguien curar a Yukiko-senpai?" },
+                    { id: "low-health-warning-175", line: "¿Estás bien Kanji? ¡No te esfuerces demasiado!" },
+                    { id: "low-health-warning-176", line: "¡Cuidado, chicos. La salud de Teddie está muy baja!" },
+                    { id: "low-health-warning-177", line: "Naoto-kun está bastante malherida, ¿podéis curarla?" },
+                    { id: "low-health-warning-178", line: "¡Cuidado chicos! ¡Tenéis la salud muy baja!" },
+                ],
+            },
+
+            // ============================================================
+            // FIN DE BATALLA
+            // ============================================================
+            {
+                category: "Fin de Batalla",
+                subcategory: "Victoria",
+                group: null,
+                lines: [
+                    { id: "victory-179", line: "¡Genial, ganamos! ¡Lo logramos!" },
+                    { id: "victory-180", line: "¡Buen trabajo!" },
+                    { id: "victory-181", line: "¡Síiii! ¡Ganamos! ¡Felicidades chicos!" },
+                ],
+            },
+
+            // ============================================================
+            // REACCIONES DEL EQUIPO
+            // ============================================================
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Golpe Crítico Físico",
+                group: null,
+                lines: [
+                    { id: "physical-critical-hit-182", line: "¡Vamos Senpai! ¡Mantén la racha!" },
+                    { id: "physical-critical-hit-183", line: "¡Ooh, buen golpe. Gran movimiento, Yosuke-senpai!" },
+                    { id: "physical-critical-hit-184", line: "¡Eso sí que es un golpe!" },
+                    { id: "physical-critical-hit-185", line: "¡Creo que acabamos de ver los verdaderos colores de Yukiko-senpai!" },
+                    { id: "physical-critical-hit-186", line: "¡Eso es Kanji! ¡Es hora del caos!" },
+                    { id: "physical-critical-hit-187", line: "(Teddie placeholder)" },
+                    { id: "physical-critical-hit-188", line: "¡Enemigo derribado! ¡Date un festín Naoto-kun!" },
+                    { id: "physical-critical-hit-189", line: "¡Qué golpe tan limpio!" },
+                ],
+            },
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Esquive",
+                group: null,
+                lines: [
+                    { id: "dodge-190", line: "*chilla* ¡Senpai eso fue genial!" },
+                    { id: "dodge-191", line: "¡Buen movimiento Yosuke-senpai!" },
+                    { id: "dodge-192", line: "¡Justo lo que esperaría de ti, Chie-senpai! ¡Woo!" },
+                    { id: "dodge-193", line: "¡Increíble Yukiko-senpai, sigue así!" },
+                    { id: "dodge-194", line: "¡Vaya Kanji! ¡Eso estuvo genial!" },
+                    { id: "dodge-195", line: "¡Oye, nada mal Teddie! ¡Sigue así!" },
+                    { id: "dodge-196", line: "¡Buen movimiento Naoto-kun! ¡Vas en racha!" },
+                ],
+            },
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Enemigo Derrotado (×1)",
+                group: null,
+                lines: [
+                    { id: "enemy-defeated-1-197", line: "¡Vamos senpai! ¡Eres el mejor!" },
+                    { id: "enemy-defeated-1-198", line: "¡Enemigo derrotado! ¡Buen comienzo! (Protagonista)" },
+                    { id: "enemy-defeated-1-199", line: "¡Eso es senpai! ¡Me tienes muy animada!" },
+                    { id: "enemy-defeated-1-200", line: "¡Vaya! ¡Eso estuvo increíble Yosuke-senpai!" },
+                    { id: "enemy-defeated-1-201", line: "¿Yosuke-senpai estuvo guay? ¡No puede ser!" },
+                    { id: "enemy-defeated-1-202", line: "¡Enemigo derrotado! ¡Sigue así Yosuke-senpai!" },
+                    { id: "enemy-defeated-1-203", line: "¡Vamos Chie-senpai, vamos! ¡Dales una patada!" },
+                    { id: "enemy-defeated-1-204", line: "¡Uf! ¡Eso tuvo que doler! (Chie)" },
+                    { id: "enemy-defeated-1-205", line: "¡Enemigo derrotado! ¡Ese es el espíritu Chie-senpai!" },
+                    { id: "enemy-defeated-1-206", line: "¡Yukiko-senpai derrota al enemigo con estilo!" },
+                    { id: "enemy-defeated-1-207", line: "¿Yukiko-senpai?! Vaya, si las miradas matasen..." },
+                    { id: "enemy-defeated-1-208", line: "¡Enemigo derrotado! ¡Bien hecho Yukiko-senpai!" },
+                    { id: "enemy-defeated-1-209", line: "¡Enemigo derrotado! ¡Sigue con el buen trabajo Kanji!" },
+                    { id: "enemy-defeated-1-210", line: "¡No lo esperaba de ti Kanji, bien hecho!" },
+                    { id: "enemy-defeated-1-211", line: "¡Eso estuvo genial Kanji! ¡Eres el mejor!" },
+                    { id: "enemy-defeated-1-212", line: "¡Mírate Teddie! ¡Estás en plena forma!" },
+                    { id: "enemy-defeated-1-213", line: "¡Buen trabajo Teddie! ¡Sigue así!" },
+                    { id: "enemy-defeated-1-214", line: "¡Enemigo derrotado! ¡Dalo todo, Teddie!" },
+                    { id: "enemy-defeated-1-215", line: "¡Vaya Naoto-kun, nunca pierdes la calma!" },
+                    { id: "enemy-defeated-1-216", line: "¡Enemigo derrotado! No pares ahora Naoto-kun" },
+                    { id: "enemy-defeated-1-217", line: "¡Naoto-kun parte cabezas y lo hace con estilo!" },
+                ],
+            },
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Enemigo Derribado",
+                group: null,
+                lines: [
+                    { id: "enemy-knocked-down-218", line: "¡Genial senpai! ¡Ve a rematarlo!" },
+                    { id: "enemy-knocked-down-219", line: "¡Enemigo derribado! ¡Buen movimiento senpai!" },
+                    { id: "enemy-knocked-down-220", line: "¡Increíble, Senpai! ¡Qué golpazo!" },
+                    { id: "enemy-knocked-down-221", line: "¡Ooooh senpai! ¡Eso fue perfecto!" },
+                    { id: "enemy-knocked-down-222", line: "¡Así se hace, Yosuke-senpai! ¡Eres el mejor!" },
+                    { id: "enemy-knocked-down-223", line: "¡Diste en su debilidad, Yosuke-senpai!" },
+                    { id: "enemy-knocked-down-224", line: "¡Vaya! ¡Eso estuvo increíble, Yosuke-senpai!" },
+                    { id: "enemy-knocked-down-225", line: "¡Enemigo derribado! ¡Así se hace Yosuke-senpai!" },
+                    { id: "enemy-knocked-down-226", line: "¡Diste en su punto débil, Chie-senpai!" },
+                    { id: "enemy-knocked-down-227", line: "¡Eso sí que es un golpe!" },
+                    { id: "enemy-knocked-down-228", line: "¡Síiii! ¡Chie-senpai va a rematarlo!" },
+                    { id: "enemy-knocked-down-229", line: "¡Enemigo derribado! ¡Lo lograste, Chie-senpai!" },
+                    { id: "enemy-knocked-down-230", line: "¡Enemigo derribado! ¡Gran trabajo Yukiko-senpai!" },
+                    { id: "enemy-knocked-down-231", line: "¡Diste en su debilidad, Yukiko-senpai!" },
+                    { id: "enemy-knocked-down-232", line: "¡Yukiko-senpai derrota al enemigo con estilo!" },
+                    { id: "enemy-knocked-down-233", line: "¡Vamos Yukiko-senpai! ¡Dale más!" },
+                    { id: "enemy-knocked-down-234", line: "¡Un golpe directo a su debilidad! ¡Vamos Kanji!" },
+                    { id: "enemy-knocked-down-235", line: "¡Enemigo derribado! ¡Demuéstrale lo que vales, Kanji!" },
+                    { id: "enemy-knocked-down-236", line: "¡Oh, muy bien! ¡Gran movimiento, Kanji!" },
+                    { id: "enemy-knocked-down-237", line: "(Kanji un enemigo derribado placeholder)" },
+                    { id: "enemy-knocked-down-238", line: "¡Nada mal Teddie!" },
+                    { id: "enemy-knocked-down-239", line: "¡Buen trabajo, Teddie! ¡Sigue así!" },
+                    { id: "enemy-knocked-down-240", line: "¡Enemigo derribado! ¡Ese es el espíritu, Teddie!" },
+                    { id: "enemy-knocked-down-241", line: "¡Vamos, Teddie! ¡No pares!" },
+                    { id: "enemy-knocked-down-242", line: "¡Vaya, Naoto-kun! ¡Nunca pierdes la calma!" },
+                    { id: "enemy-knocked-down-243", line: "¡Diste en su debilidad! ¡Buen movimiento, Naoto-kun!" },
+                    { id: "enemy-knocked-down-244", line: "¡Así se hace, Naoto-kun! ¡No se te escapa nada!" },
+                ],
+            },
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Enemigo Derrotado (×2)",
+                group: null,
+                lines: [
+                    { id: "enemy-defeated-2-245", line: "¡Estás en racha senpai! ¡Dos derrotados!" },
+                    { id: "enemy-defeated-2-246", line: "¡Sigue así Yosuke-senpai! ¡Dos derrotados!" },
+                    { id: "enemy-defeated-2-247", line: "¡Vaya Chie-senpai! ¡Dos derrotados!" },
+                    { id: "enemy-defeated-2-248", line: "(Yukiko DOS Enemigos Derrotados Placeholder)" },
+                    { id: "enemy-defeated-2-249", line: "¡Kanji derrotó a dos enemigos! ¡Vamos equipo!" },
+                    { id: "enemy-defeated-2-250", line: "¡Qué movimientos Teddie! ¡Dos derrotados!" },
+                    { id: "enemy-defeated-2-251", line: "¡Vaya Naoto-kun! ¡Derrotaste a dos enemigos!" },
+                ],
+            },
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Enemigo Derrotado (×3)",
+                group: null,
+                lines: [
+                    { id: "enemy-defeated-3-252", line: "¡Tres enemigos derrotados! ¡Qué guay eres senpai!" },
+                    { id: "enemy-defeated-3-253", line: "¡Tres enemigos derrotados! ¡Vamos Yosuke-senpai!" },
+                    { id: "enemy-defeated-3-254", line: "¡Tres enemigos derrotados! ¡Increíble, Chie-senpai!" },
+                    { id: "enemy-defeated-3-255", line: "¡Tres enemigos derrotados! ¡Genial, Yukiko-senpai!" },
+                    { id: "enemy-defeated-3-256", line: "Placeholder" },
+                    { id: "enemy-defeated-3-257", line: "¡Tres enemigos derrotados! ¡Buen chico, Teddie!" },
+                    { id: "enemy-defeated-3-258", line: "(Naoto TRES Enemigos Derrotados Placeholder)" },
+                ],
+            },
+            {
+                category: "Reacciones del Equipo",
+                subcategory: "Enemigo Derrotado (×4)",
+                group: null,
+                lines: [
+                    { id: "enemy-defeated-4-259", line: "¡Increíble, Senpai! ¡Cuatro enemigos derrotados!" },
+                    { id: "enemy-defeated-4-260", line: "¡Gran trabajo Yosuke-senpai! ¡Cuatro derrotados!" },
+                    { id: "enemy-defeated-4-261", line: "(Chie CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "enemy-defeated-4-262", line: "(Yukiko CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "enemy-defeated-4-263", line: "¡Nada mal Kanji! ¡Cuatro enemigos derrotados!" },
+                    { id: "enemy-defeated-4-264", line: "(Teddie CUATRO Enemigos Derrotados Placeholder)" },
+                    { id: "enemy-defeated-4-265", line: "¡Fue genial Naoto-kun! ¡Cuatro enemigos derrotados!" },
+                ],
+            },
+
+            // ============================================================
+            // MISCELÁNEA
+            // ============================================================
+            {
+                category: "Miscelánea",
+                subcategory: "Otras Frases",
+                group: null,
+                lines: [
+                    { id: "other-lines-266", line: "¡Ooh! ¡A ese no le gustan los ataques físicos!" },
+                    { id: "other-lines-267", line: "¡Genial! ¡Es débil a los ataques físicos!" },
+                ],
+            },
+        ];
+
+        /** Total de frases necesarias para el logro */
+        const ACHIEVEMENT_TARGET = 250;
+
+        // ==========================================
+        // TRACKER LOGIC
+        // ==========================================
+        /**
+         * P4G — Hardcore Risette Fan Tracker
+         * Main JavaScript entry point (Vite / ES Module)
+         *
+         * Responsibilities:
+         *  - Import the RISE_DATA structure
+         *  - Render the accordion UI dynamically
+         *  - Sync state with localStorage
+         *  - Update the global progress counter
+         */
+
+
+
+        // ─────────────────────────────────────────────
+        // CONSTANTS
+        // ─────────────────────────────────────────────
+        const STORAGE_KEY = 'p4rise200_heard';
+
+        // ─────────────────────────────────────────────
+        // STATE
+        // ─────────────────────────────────────────────
+
+        /** @type {Set<string>} Set of line IDs that have been heard */
+        let heardSet = new Set();
+
+        // ─────────────────────────────────────────────
+        // TRANSLATION SYSTEM ENGINE
+        // ─────────────────────────────────────────────
+
+        function loadLang() {
+            currentLang = localStorage.getItem(LANG_STORAGE_KEY) || 'es';
+        }
+
+        function saveLang() {
+            localStorage.setItem(LANG_STORAGE_KEY, currentLang);
+        }
+
+        function updateUILabels() {
+            const texts = UI_TEXT[currentLang];
+
+            const sub = document.getElementById('header-subtitle');
+            if (sub) sub.textContent = texts.subtitle;
+
+            const counterLabel = document.querySelector('.counter-label');
+            if (counterLabel) counterLabel.textContent = texts.heard;
+
+            const btnExpand = document.getElementById('btn-expand-all');
+            if (btnExpand) btnExpand.textContent = texts.expandAll;
+
+            const btnCollapse = document.getElementById('btn-collapse-all');
+            if (btnCollapse) btnCollapse.textContent = texts.collapseAll;
+
+            const btnReset = document.getElementById('btn-reset');
+            if (btnReset) btnReset.textContent = texts.reset;
+
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.placeholder = texts.searchPlaceholder;
+                searchInput.setAttribute('aria-label', currentLang === 'en' ? "Search line" : "Buscar frase");
+            }
+
+            const modalTitle = document.getElementById('modal-title');
+            if (modalTitle) modalTitle.textContent = texts.resetTitle;
+
+            const modalBody = document.querySelector('#reset-modal .modal-body');
+            if (modalBody) modalBody.textContent = texts.resetBody;
+
+            const modalConfirm = document.getElementById('modal-confirm');
+            if (modalConfirm) modalConfirm.textContent = texts.resetConfirm;
+
+            const modalCancel = document.getElementById('modal-cancel');
+            if (modalCancel) modalCancel.textContent = texts.resetCancel;
+
+            const bannerStrong = document.querySelector('#achievement-banner strong');
+            if (bannerStrong) bannerStrong.textContent = texts.achievementTitle;
+
+            const btnLang = document.getElementById('btn-lang');
+            if (btnLang) {
+                btnLang.textContent = currentLang === 'es' ? 'EN' : 'ES';
+                btnLang.setAttribute('aria-label', currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+            }
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            saveLang();
+            updateUILabels();
+            renderTracker();
+            updateProgress();
+
+            const searchInput = document.getElementById('search-input');
+            if (searchInput && searchInput.value) {
+                performSearch(searchInput.value);
+            }
+        }
+
+        function initLang() {
+            loadLang();
+            updateUILabels();
+
+            const btnLang = document.getElementById('btn-lang');
+            if (btnLang) {
+                btnLang.addEventListener('click', toggleLang);
+            }
+        }
+
+        // ─────────────────────────────────────────────
+        // STORAGE HELPERS
+        // ─────────────────────────────────────────────
+
+        function loadState() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (raw) {
+                    const arr = JSON.parse(raw);
+                    heardSet = new Set(Array.isArray(arr) ? arr : []);
+                }
+            } catch {
+                heardSet = new Set();
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify([...heardSet]));
+        }
+
+        // ─────────────────────────────────────────────
+        // DOM HELPERS
+        // ─────────────────────────────────────────────
+
+        function el(tag, attrs = {}, ...children) {
+            const node = document.createElement(tag);
+            for (const [key, val] of Object.entries(attrs)) {
+                if (key === 'className') node.className = val;
+                else if (key === 'id') node.id = val;
+                else if (key === 'type') node.type = val;
+                else if (key === 'role') node.setAttribute('role', val);
+                else if (key === 'ariaLabel') node.setAttribute('aria-label', val);
+                else if (key === 'ariaExpanded') node.setAttribute('aria-expanded', val);
+                else if (key.startsWith('data')) node.setAttribute(key, val);
+                else node[key] = val;
+            }
+            for (const child of children) {
+                if (typeof child === 'string') node.appendChild(document.createTextNode(child));
+                else if (child) node.appendChild(child);
+            }
+            return node;
+        }
+
+        // ─────────────────────────────────────────────
+        // PROGRESS UPDATE
+        // ─────────────────────────────────────────────
+
+        function updateProgress() {
+            const total = ACHIEVEMENT_TARGET;
+            const count = heardSet.size;
+            const pct = total > 0 ? Math.min(100, Math.round((count / total) * 100)) : 0;
+
+            // Counter
+            const countEl = document.getElementById('count-current');
+            countEl.textContent = count;
+            countEl.classList.remove('bump');
+            void countEl.offsetWidth; // reflow to retrigger animation
+            countEl.classList.add('bump');
+            setTimeout(() => countEl.classList.remove('bump'), 150);
+
+            document.getElementById('count-target').textContent = total;
+
+            // Bar
+            const fill = document.getElementById('progress-bar-fill');
+            fill.style.width = `${pct}%`;
+
+            // Percent label
+            document.getElementById('progress-pct').textContent = `${pct}%`;
+
+            // Aria
+            const wrap = document.getElementById('progress-wrap');
+            wrap.setAttribute('aria-valuenow', count);
+
+            // Achievement banner
+            const banner = document.getElementById('achievement-banner');
+            if (count >= total) {
+                banner.classList.remove('hidden');
+                banner.setAttribute('aria-hidden', 'false');
+            } else {
+                banner.classList.add('hidden');
+                banner.setAttribute('aria-hidden', 'true');
+            }
+
+            // Update all sub-badges
+            updateAllBadges();
+        }
+
+        // ─────────────────────────────────────────────
+        // BADGE COUNTERS (per-category and per-subcat)
+        // ─────────────────────────────────────────────
+
+        function countHeardInContainer(container) {
+            let total = 0, heard = 0;
+            container.querySelectorAll('.line-btn[data-line-id]').forEach(btn => {
+                total++;
+                if (heardSet.has(btn.dataset.lineId)) heard++;
+            });
+            return { total, heard };
+        }
+
+        function updateAllBadges() {
+            // Category badges
+            document.querySelectorAll('.cat-block').forEach(catBlock => {
+                const badge = catBlock.querySelector(':scope > .cat-header .cat-badge');
+                if (badge) {
+                    const { total, heard } = countHeardInContainer(catBlock);
+                    badge.textContent = `${heard} / ${total}`;
+                }
+            });
+            // Subcategory badges
+            document.querySelectorAll('.subcat-block').forEach(subcatBlock => {
+                const badge = subcatBlock.querySelector(':scope > .subcat-header .subcat-badge');
+                if (badge) {
+                    const { total, heard } = countHeardInContainer(subcatBlock);
+                    badge.textContent = `${heard} / ${total}`;
+                }
+            });
+        }
+
+        // ─────────────────────────────────────────────
+        // LINE TOGGLE
+        // ─────────────────────────────────────────────
+
+        function toggleLine(lineId, btn) {
+            if (heardSet.has(lineId)) {
+                heardSet.delete(lineId);
+                btn.classList.remove('heard');
+                btn.setAttribute('aria-pressed', 'false');
+            } else {
+                heardSet.add(lineId);
+                btn.classList.add('heard');
+                btn.setAttribute('aria-pressed', 'true');
+            }
+            saveState();
+            updateProgress();
+        }
+
+        // ─────────────────────────────────────────────
+        // ACCORDION HELPERS
+        // ─────────────────────────────────────────────
+
+        function toggleAccordion(block, headerEl) {
+            const isOpen = block.classList.toggle('open');
+            headerEl.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        function openAll() {
+            document.querySelectorAll('.cat-block, .subcat-block').forEach(b => {
+                b.classList.add('open');
+                const h = b.querySelector(':scope > button');
+                if (h) h.setAttribute('aria-expanded', 'true');
+            });
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.cat-block, .subcat-block').forEach(b => {
+                b.classList.remove('open');
+                const h = b.querySelector(':scope > button');
+                if (h) h.setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        // ─────────────────────────────────────────────
+        // RENDER — LINE ITEM
+        // ─────────────────────────────────────────────
+
+        function renderLine(lineData) {
+            const isHeard = heardSet.has(lineData.id);
+            const li = el('li', { className: 'line-item' });
+            const lineText = getOriginalText(lineData.id) || lineData.line;
+
+            const btn = el('button', {
+                className: `line-btn${isHeard ? ' heard' : ''}`,
+                type: 'button',
+                'data-line-id': lineData.id,
+                ariaLabel: lineText,
+                'aria-pressed': isHeard ? 'true' : 'false',
+            });
+
+            const checkBox = el('span', {
+                className: 'line-check',
+                role: 'presentation'
+            },
+                el('span', { className: 'line-check-mark' }, '✓')
+            );
+            const text = el('span', { className: 'line-text' }, lineText);
+
+            btn.appendChild(checkBox);
+            btn.appendChild(text);
+
+            btn.addEventListener('click', () => toggleLine(lineData.id, btn));
+
+            li.appendChild(btn);
+            return li;
+        }
+
+        // ─────────────────────────────────────────────
+        // RENDER — SUBCATEGORY BLOCK
+        // ─────────────────────────────────────────────
+
+        /**
+         * Groups an array of line entries by their `group` field.
+         * Returns an array of { group, lines[] }
+         */
+        function groupByGroup(entries) {
+            const map = new Map();
+            for (const entry of entries) {
+                const key = entry.group || '__none__';
+                if (!map.has(key)) map.set(key, []);
+                map.get(key).push(...entry.lines);
+            }
+            return [...map.entries()].map(([group, lines]) => ({
+                group: group === '__none__' ? null : group,
+                lines,
+            }));
+        }
+
+        function renderSubcatBlock(subcatName, entries) {
+            const block = el('div', { className: 'subcat-block' });
+            const translatedSubcatName = (CAT_TEXT[currentLang] && CAT_TEXT[currentLang][subcatName]) || subcatName;
+
+            // Header button
+            const header = el('button', {
+                className: 'subcat-header',
+                type: 'button',
+                ariaExpanded: 'false',
+                ariaLabel: currentLang === 'en' ? `Subcategory: ${translatedSubcatName}` : `Subcategoría: ${translatedSubcatName}`,
+            });
+
+            const left = el('div', { className: 'subcat-header-left' },
+                el('i', { className: 'subcat-chevron' }, '▶'),
+                el('span', { className: 'subcat-title' }, translatedSubcatName)
+            );
+            const badge = el('span', { className: 'subcat-badge' }, '0 / 0');
+
+            header.appendChild(left);
+            header.appendChild(badge);
+            header.addEventListener('click', () => toggleAccordion(block, header));
+
+            // Body
+            const body = el('div', { className: 'subcat-body' });
+
+            // Group lines
+            const allLines = entries.flatMap(e => e.lines);
+            const hasGroups = entries.some(e => e.group !== null);
+
+            if (hasGroups) {
+                const grouped = groupByGroup(entries);
+                for (const { group, lines } of grouped) {
+                    if (group) {
+                        body.appendChild(el('div', { className: 'group-label' }, group));
+                    }
+                    const ul = el('ul', { className: 'line-list' });
+                    lines.forEach(l => ul.appendChild(renderLine(l)));
+                    body.appendChild(ul);
+                }
+            } else {
+                const ul = el('ul', { className: 'line-list' });
+                allLines.forEach(l => ul.appendChild(renderLine(l)));
+                body.appendChild(ul);
+            }
+
+            block.appendChild(header);
+            block.appendChild(body);
+            return block;
+        }
+
+        // ─────────────────────────────────────────────
+        // RENDER — CATEGORY BLOCK
+        // ─────────────────────────────────────────────
+
+        function renderCategoryBlock(categoryName, subcatMap) {
+            const block = el('div', { className: 'cat-block' });
+            const translatedCategoryName = (CAT_TEXT[currentLang] && CAT_TEXT[currentLang][categoryName]) || categoryName;
+
+            // Header button
+            const header = el('button', {
+                className: 'cat-header',
+                type: 'button',
+                ariaExpanded: 'false',
+                ariaLabel: currentLang === 'en' ? `Category: ${translatedCategoryName}` : `Categoría: ${translatedCategoryName}`,
+            });
+
+            const left = el('div', { className: 'cat-header-left' },
+                el('i', { className: 'cat-chevron' }, '▶'),
+                el('span', { className: 'cat-title' }, translatedCategoryName)
+            );
+            const badge = el('span', { className: 'cat-badge' }, '0 / 0');
+
+            header.appendChild(left);
+            header.appendChild(badge);
+            header.addEventListener('click', () => toggleAccordion(block, header));
+
+            // Body
+            const body = el('div', { className: 'cat-body' });
+
+            for (const [subcatName, entries] of subcatMap.entries()) {
+                body.appendChild(renderSubcatBlock(subcatName, entries));
+            }
+
+            block.appendChild(header);
+            block.appendChild(body);
+            return block;
+        }
+
+        // ─────────────────────────────────────────────
+        // BUILD DATA MAP
+        // ─────────────────────────────────────────────
+
+        /**
+         * Transforms flat RISE_DATA array into a nested Map:
+         * Map< category => Map< subcategory => entries[] > >
+         */
+        function buildDataMap() {
+            const catMap = new Map();
+            for (const entry of RISE_DATA) {
+                if (!catMap.has(entry.category)) {
+                    catMap.set(entry.category, new Map());
+                }
+                const subMap = catMap.get(entry.category);
+                if (!subMap.has(entry.subcategory)) {
+                    subMap.set(entry.subcategory, []);
+                }
+                subMap.get(entry.subcategory).push(entry);
+            }
+            return catMap;
+        }
+
+        // ─────────────────────────────────────────────
+        // RENDER ALL
+        // ─────────────────────────────────────────────
+
+        function renderTracker() {
+            const container = document.getElementById('tracker-container');
+            if (!container) return;
+
+            container.innerHTML = '';
+            const catMap = buildDataMap();
+
+            for (const [catName, subMap] of catMap.entries()) {
+                container.appendChild(renderCategoryBlock(catName, subMap));
+            }
+
+            // Initial badge update after render
+            updateAllBadges();
+        }
+
+        // ─────────────────────────────────────────────
+        // RESET LOGIC
+        // ─────────────────────────────────────────────
+
+        function resetAll() {
+            heardSet.clear();
+            saveState();
+
+            // Re-apply UI state to all buttons without full re-render
+            document.querySelectorAll('.line-btn[data-line-id]').forEach(btn => {
+                btn.classList.remove('heard');
+                btn.setAttribute('aria-pressed', 'false');
+            });
+
+            updateProgress();
+        }
+
+        // ─────────────────────────────────────────────
+        // MODAL
+        // ─────────────────────────────────────────────
+
+        function initModal() {
+            const modal = document.getElementById('reset-modal');
+            const btnOpen = document.getElementById('btn-reset');
+            const btnConfirm = document.getElementById('modal-confirm');
+            const btnCancel = document.getElementById('modal-cancel');
+
+            if (!modal || !btnOpen) return;
+
+            btnOpen.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                btnConfirm.focus();
+            });
+
+            btnCancel.addEventListener('click', () => modal.classList.add('hidden'));
+
+            btnConfirm.addEventListener('click', () => {
+                resetAll();
+                modal.classList.add('hidden');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.add('hidden');
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') modal.classList.add('hidden');
+            });
+        }
+
+        // ─────────────────────────────────────────────
+        // GLOBAL CONTROLS
+        // ─────────────────────────────────────────────
+
+        function initControls() {
+            document.getElementById('btn-expand-all')
+                ?.addEventListener('click', openAll);
+            document.getElementById('btn-collapse-all')
+                ?.addEventListener('click', collapseAll);
+        }
+
+        // ─────────────────────────────────────────────
+        // SEARCH
+        // ─────────────────────────────────────────────
+
+        let searchTimeout = null;
+
+        function initSearch() {
+            const input = document.getElementById('search-input');
+            const clearBtn = document.getElementById('search-clear');
+            const countEl = document.getElementById('search-count');
+            if (!input) return;
+
+            input.addEventListener('input', () => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => performSearch(input.value), 180);
+
+                // Show/hide clear button
+                if (input.value.length > 0) {
+                    clearBtn.classList.remove('hidden');
+                } else {
+                    clearBtn.classList.add('hidden');
+                }
+            });
+
+            clearBtn.addEventListener('click', () => {
+                input.value = '';
+                clearBtn.classList.add('hidden');
+                countEl.classList.add('hidden');
+                clearSearch();
+                input.focus();
+            });
+
+            // Ctrl/Cmd+F shortcut to focus search
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                    // Only intercept if not already in an input
+                    if (document.activeElement !== input) {
+                        e.preventDefault();
+                        input.focus();
+                        input.select();
+                    }
+                }
+            });
+        }
+
+        function performSearch(query) {
+            const countEl = document.getElementById('search-count');
+            const trimmed = query.trim();
+
+            if (!trimmed) {
+                clearSearch();
+                countEl.classList.add('hidden');
+                return;
+            }
+
+            const normalizedQuery = trimmed.toLowerCase();
+            let matchCount = 0;
+
+            // Process every line item
+            document.querySelectorAll('.line-item').forEach(li => {
+                const btn = li.querySelector('.line-btn');
+                const textEl = li.querySelector('.line-text');
+                if (!btn || !textEl) return;
+
+                const lineId = btn.dataset.lineId;
+                // Find the original text from RISE_DATA
+                const original = getOriginalText(lineId) || textEl.textContent;
+                const lower = original.toLowerCase();
+                const idx = lower.indexOf(normalizedQuery);
+
+                if (idx !== -1) {
+                    // Match — show and highlight
+                    li.classList.remove('filter-hidden');
+                    textEl.innerHTML = highlightMatch(original, idx, trimmed.length);
+                    matchCount++;
+                } else {
+                    // No match — hide
+                    li.classList.add('filter-hidden');
+                    textEl.textContent = original; // remove any previous highlight
+                }
+            });
+
+            // Auto-show/hide subcats and cats based on visible children
+            document.querySelectorAll('.subcat-block').forEach(subcatBlock => {
+                const hasVisible = subcatBlock.querySelector('.line-item:not(.filter-hidden)');
+                if (hasVisible) {
+                    subcatBlock.classList.remove('filter-hidden');
+                    subcatBlock.classList.add('open');
+                    const h = subcatBlock.querySelector(':scope > button');
+                    if (h) h.setAttribute('aria-expanded', 'true');
+                } else {
+                    subcatBlock.classList.add('filter-hidden');
+                }
+            });
+
+            document.querySelectorAll('.cat-block').forEach(catBlock => {
+                const hasVisible = catBlock.querySelector('.subcat-block:not(.filter-hidden)');
+                if (hasVisible) {
+                    catBlock.classList.remove('filter-hidden');
+                    catBlock.classList.add('open');
+                    const h = catBlock.querySelector(':scope > button');
+                    if (h) h.setAttribute('aria-expanded', 'true');
+                } else {
+                    catBlock.classList.add('filter-hidden');
+                }
+            });
+
+            // Update result count
+            const resultWord = currentLang === 'en' ? 'result' : 'resultado';
+            const pluralSuffix = currentLang === 'en' ? (matchCount !== 1 ? 's' : '') : (matchCount !== 1 ? 's' : '');
+            countEl.textContent = `${matchCount} ${resultWord}${pluralSuffix}`;
+            countEl.classList.remove('hidden');
+        }
+
+        function clearSearch() {
+            // Remove all filter-hidden classes
+            document.querySelectorAll('.filter-hidden').forEach(el => {
+                el.classList.remove('filter-hidden');
+            });
+
+            // Restore original text (remove highlights)
+            document.querySelectorAll('.line-item').forEach(li => {
+                const btn = li.querySelector('.line-btn');
+                const textEl = li.querySelector('.line-text');
+                if (!btn || !textEl) return;
+                const lineId = btn.dataset.lineId;
+                const original = getOriginalText(lineId);
+                if (original) textEl.textContent = original;
+            });
+
+            // Collapse everything back
+            collapseAll();
+        }
+
+        /** Lookup original line text by ID in the current language */
+        function getOriginalText(lineId) {
+            if (currentLang === 'en' && LINE_EN[lineId]) {
+                return LINE_EN[lineId];
+            }
+            for (const entry of RISE_DATA) {
+                for (const l of entry.lines) {
+                    if (l.id === lineId) return l.line;
+                }
+            }
+            return null;
+        }
+
+        /** Return HTML string with the matching substring wrapped in <mark> */
+        function highlightMatch(original, startIndex, length) {
+            const before = escapeHtml(original.substring(0, startIndex));
+            const match = escapeHtml(original.substring(startIndex, startIndex + length));
+            const after = escapeHtml(original.substring(startIndex + length));
+            return `${before}<mark>${match}</mark>${after}`;
+        }
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        // ─────────────────────────────────────────────
+        // BOOT
+        // ─────────────────────────────────────────────
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            initLang();
+            renderTracker();
+            updateProgress();
+            initModal();
+            initControls();
+            initSearch();
+        });
+
+    </script>
+</body>
+
+</html>
