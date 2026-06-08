@@ -679,6 +679,77 @@
             display: none !important;
         }
 
+        /* Character Filters */
+        .char-filter-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .char-filter-btn {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            background-color: var(--dark);
+            color: var(--light);
+            border: 2px solid var(--mid2);
+            border-radius: 20px;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .char-filter-btn:hover {
+            border-color: var(--light);
+            color: var(--white);
+        }
+
+        .char-filter-btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 1px;
+        }
+
+        .char-filter-btn.active {
+            color: var(--black);
+            background-color: var(--char-color, var(--gold));
+            border-color: var(--char-color, var(--gold));
+        }
+
+        .char-filter-btn[data-char="all"] {
+            --char-color: var(--gold);
+        }
+        .char-filter-btn[data-char="protagonist"] {
+            --char-color: #8c92ac;
+        }
+        .char-filter-btn[data-char="yosuke"] {
+            --char-color: #ff9a00;
+        }
+        .char-filter-btn[data-char="chie"] {
+            --char-color: #72cc18;
+        }
+        .char-filter-btn[data-char="yukiko"] {
+            --char-color: #f63c6d;
+        }
+        .char-filter-btn[data-char="kanji"] {
+            --char-color: #ffeb3b;
+        }
+        .char-filter-btn[data-char="teddie"] {
+            --char-color: #3aa6ff;
+        }
+        .char-filter-btn[data-char="naoto"] {
+            --char-color: #3b50c1;
+        }
+        .char-filter-btn[data-char="general"] {
+            --char-color: #9e9e9e;
+        }
+
         @media (max-width: 500px) {
             .brand-title {
                 font-size: 1.25rem;
@@ -839,6 +910,18 @@
                 <span id="search-count" class="search-count hidden" aria-live="polite"></span>
             </div>
 
+            <div class="char-filter-wrap" id="char-filter-wrap">
+                <button class="char-filter-btn active" data-char="all" type="button">Todos</button>
+                <button class="char-filter-btn" data-char="protagonist" type="button">Protagonista</button>
+                <button class="char-filter-btn" data-char="yosuke" type="button">Yosuke</button>
+                <button class="char-filter-btn" data-char="chie" type="button">Chie</button>
+                <button class="char-filter-btn" data-char="yukiko" type="button">Yukiko</button>
+                <button class="char-filter-btn" data-char="kanji" type="button">Kanji</button>
+                <button class="char-filter-btn" data-char="teddie" type="button">Teddie</button>
+                <button class="char-filter-btn" data-char="naoto" type="button">Naoto</button>
+                <button class="char-filter-btn" data-char="general" type="button">Otros</button>
+            </div>
+
             <div class="hero-actions">
                 <button id="btn-expand-all" class="action-btn" type="button">Expandir Todo</button>
                 <button id="btn-collapse-all" class="action-btn" type="button">Colapsar Todo</button>
@@ -892,7 +975,16 @@
                 resetConfirm: "Sí, reiniciar",
                 resetCancel: "Cancelar",
                 achievementTitle: "¡LOGRO DESBLOQUEADO!",
-                results: "resultado"
+                results: "resultado",
+                charAll: "Todos",
+                charProtagonist: "Protagonista",
+                charYosuke: "Yosuke",
+                charChie: "Chie",
+                charYukiko: "Yukiko",
+                charKanji: "Kanji",
+                charTeddie: "Teddie",
+                charNaoto: "Naoto",
+                charGeneral: "Otros"
             },
             en: {
                 subtitle: "Rise Kujikawa — Navigator Lines Tracker",
@@ -906,7 +998,16 @@
                 resetConfirm: "Yes, reset",
                 resetCancel: "Cancel",
                 achievementTitle: "ACHIEVEMENT UNLOCKED!",
-                results: "result"
+                results: "result",
+                charAll: "All",
+                charProtagonist: "Protagonist",
+                charYosuke: "Yosuke",
+                charChie: "Chie",
+                charYukiko: "Yukiko",
+                charKanji: "Kanji",
+                charTeddie: "Teddie",
+                charNaoto: "Naoto",
+                charGeneral: "Others"
             }
         };
 
@@ -1890,6 +1991,14 @@
                 btnLang.textContent = currentLang === 'es' ? 'EN' : 'ES';
                 btnLang.setAttribute('aria-label', currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español');
             }
+
+            document.querySelectorAll('.char-filter-btn').forEach(btn => {
+                const char = btn.dataset.char;
+                const key = 'char' + char.charAt(0).toUpperCase() + char.slice(1);
+                if (texts[key]) {
+                    btn.textContent = texts[key];
+                }
+            });
         }
 
         function toggleLang() {
@@ -1984,11 +2093,42 @@
             updateAllBadges();
         }
 
+        const CHARACTER_RANGES = {
+            protagonist: [76, 79, 87, 95, [103, 105], 124, 131, 138, 145, 152, 159, 182, 190, [197, 199], [218, 221], 245, 252, 259],
+            yosuke: [80, 88, 96, [106, 108], 125, 132, 139, 146, 153, 160, 166, 172, 183, 191, [200, 202], [222, 225], 246, 253, 260],
+            chie: [81, 89, 97, [109, 111], 126, 133, 140, 147, 154, 161, 167, 173, 184, 192, [203, 205], [226, 229], 247, 254, 261],
+            yukiko: [82, 90, 98, [112, 114], 127, 134, 141, 148, 155, 162, 168, 174, 185, 193, [206, 208], [230, 233], 248, 255, 262],
+            kanji: [83, 91, 99, [115, 117], 128, 135, 142, 149, 156, 163, 169, 175, 186, 194, [209, 211], [234, 237], 249, 256, 263],
+            teddie: [84, 92, 100, [118, 120], 129, 136, 143, 150, 157, 164, 170, 176, 187, 195, [212, 214], [238, 241], 250, 257, 264],
+            naoto: [85, 93, 101, [121, 123], 130, 137, 144, 151, 158, 165, 171, 177, 188, 196, [215, 217], [242, 244], 251, 258, 265]
+        };
+
+        function getCharacterOfLine(id) {
+            const num = parseInt(id.split('-').pop());
+            if (isNaN(num)) return 'general';
+
+            for (const [charName, ranges] of Object.entries(CHARACTER_RANGES)) {
+                for (const range of ranges) {
+                    if (Array.isArray(range)) {
+                        if (num >= range[0] && num <= range[1]) return charName;
+                    } else {
+                        if (num === range) return charName;
+                    }
+                }
+            }
+            return 'general';
+        }
+
         function countHeardInContainer(container) {
             let total = 0, heard = 0;
             container.querySelectorAll('.line-btn[data-line-id]').forEach(btn => {
-                total++;
-                if (heardSet.has(btn.dataset.lineId)) heard++;
+                const lineId = btn.dataset.lineId;
+                const charOfLine = getCharacterOfLine(lineId);
+                
+                if (activeCharFilter === 'all' || activeCharFilter === charOfLine) {
+                    total++;
+                    if (heardSet.has(lineId)) heard++;
+                }
             });
             return { total, heard };
         }
@@ -2244,17 +2384,17 @@
                 ?.addEventListener('click', collapseAll);
         }
 
+        let activeCharFilter = 'all';
         let searchTimeout = null;
 
         function initSearch() {
             const input = document.getElementById('search-input');
             const clearBtn = document.getElementById('search-clear');
-            const countEl = document.getElementById('search-count');
             if (!input) return;
 
             input.addEventListener('input', () => {
                 clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => performSearch(input.value), 180);
+                searchTimeout = setTimeout(() => applyFilters(), 180);
 
                 if (input.value.length > 0) {
                     clearBtn.classList.remove('hidden');
@@ -2266,8 +2406,7 @@
             clearBtn.addEventListener('click', () => {
                 input.value = '';
                 clearBtn.classList.add('hidden');
-                countEl.classList.add('hidden');
-                clearSearch();
+                applyFilters();
                 input.focus();
             });
 
@@ -2282,17 +2421,28 @@
             });
         }
 
-        function performSearch(query) {
+        function initCharFilters() {
+            const wrap = document.getElementById('char-filter-wrap');
+            if (!wrap) return;
+
+            wrap.addEventListener('click', (e) => {
+                const btn = e.target.closest('.char-filter-btn');
+                if (!btn) return;
+
+                wrap.querySelectorAll('.char-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCharFilter = btn.dataset.char;
+
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            const input = document.getElementById('search-input');
+            const query = (input?.value || '').trim();
             const countEl = document.getElementById('search-count');
-            const trimmed = query.trim();
 
-            if (!trimmed) {
-                clearSearch();
-                countEl.classList.add('hidden');
-                return;
-            }
-
-            const normalizedQuery = trimmed.toLowerCase();
+            const normalizedQuery = query.toLowerCase();
             let matchCount = 0;
 
             document.querySelectorAll('.line-item').forEach(li => {
@@ -2301,13 +2451,28 @@
                 if (!btn || !textEl) return;
 
                 const lineId = btn.dataset.lineId;
+                const charOfLine = getCharacterOfLine(lineId);
                 const original = getOriginalText(lineId) || textEl.textContent;
-                const lower = original.toLowerCase();
-                const idx = lower.indexOf(normalizedQuery);
 
-                if (idx !== -1) {
+                // Match character filter
+                const matchesChar = (activeCharFilter === 'all' || activeCharFilter === charOfLine);
+
+                // Match search query
+                let matchesSearch = true;
+                let idx = -1;
+                if (normalizedQuery) {
+                    const lowerText = original.toLowerCase();
+                    idx = lowerText.indexOf(normalizedQuery);
+                    matchesSearch = (idx !== -1);
+                }
+
+                if (matchesChar && matchesSearch) {
                     li.classList.remove('filter-hidden');
-                    textEl.innerHTML = highlightMatch(original, idx, trimmed.length);
+                    if (normalizedQuery && idx !== -1) {
+                        textEl.innerHTML = highlightMatch(original, idx, query.length);
+                    } else {
+                        textEl.textContent = original;
+                    }
                     matchCount++;
                 } else {
                     li.classList.add('filter-hidden');
@@ -2317,11 +2482,13 @@
 
             document.querySelectorAll('.subcat-block').forEach(subcatBlock => {
                 const hasVisible = subcatBlock.querySelector('.line-item:not(.filter-hidden)');
+                const h = subcatBlock.querySelector(':scope > button');
                 if (hasVisible) {
                     subcatBlock.classList.remove('filter-hidden');
-                    subcatBlock.classList.add('open');
-                    const h = subcatBlock.querySelector(':scope > button');
-                    if (h) h.setAttribute('aria-expanded', 'true');
+                    if (normalizedQuery || activeCharFilter !== 'all') {
+                        subcatBlock.classList.add('open');
+                        if (h) h.setAttribute('aria-expanded', 'true');
+                    }
                 } else {
                     subcatBlock.classList.add('filter-hidden');
                 }
@@ -2329,36 +2496,28 @@
 
             document.querySelectorAll('.cat-block').forEach(catBlock => {
                 const hasVisible = catBlock.querySelector('.subcat-block:not(.filter-hidden)');
+                const h = catBlock.querySelector(':scope > button');
                 if (hasVisible) {
                     catBlock.classList.remove('filter-hidden');
-                    catBlock.classList.add('open');
-                    const h = catBlock.querySelector(':scope > button');
-                    if (h) h.setAttribute('aria-expanded', 'true');
+                    if (normalizedQuery || activeCharFilter !== 'all') {
+                        catBlock.classList.add('open');
+                        if (h) h.setAttribute('aria-expanded', 'true');
+                    }
                 } else {
                     catBlock.classList.add('filter-hidden');
                 }
             });
 
-            const resultWord = currentLang === 'en' ? 'result' : 'resultado';
-            const pluralSuffix = currentLang === 'en' ? (matchCount !== 1 ? 's' : '') : (matchCount !== 1 ? 's' : '');
-            countEl.textContent = `${matchCount} ${resultWord}${pluralSuffix}`;
-            countEl.classList.remove('hidden');
-        }
+            updateAllBadges();
 
-        function clearSearch() {
-            document.querySelectorAll('.filter-hidden').forEach(el => {
-                el.classList.remove('filter-hidden');
-            });
-            document.querySelectorAll('.line-item').forEach(li => {
-                const btn = li.querySelector('.line-btn');
-                const textEl = li.querySelector('.line-text');
-                if (!btn || !textEl) return;
-                const lineId = btn.dataset.lineId;
-                const original = getOriginalText(lineId);
-                if (original) textEl.textContent = original;
-            });
-
-            collapseAll();
+            if (normalizedQuery) {
+                const resultWord = currentLang === 'en' ? 'result' : 'resultado';
+                const pluralSuffix = matchCount !== 1 ? 's' : '';
+                countEl.textContent = `${matchCount} ${resultWord}${pluralSuffix}`;
+                countEl.classList.remove('hidden');
+            } else {
+                countEl.classList.add('hidden');
+            }
         }
 
         function getOriginalText(lineId) {
@@ -2396,6 +2555,7 @@
             initModal();
             initControls();
             initSearch();
+            initCharFilters();
         });
 
     </script>
