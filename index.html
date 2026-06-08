@@ -1028,7 +1028,6 @@
                 "Enemigos Derrotados (Planificado)": "Enemigos Derrotados (Planificado)",
                 "Efectos de Estado": "Efectos de Estado",
                 "Estado Crítico": "Estado Crítico",
-                "Fin de Batalla": "Fin de Batalla",
                 "Reacciones del Equipo": "Reacciones del Equipo",
                 "Miscelánea": "Miscelánea",
                 "Emboscada (Enemigo)": "Emboscada (Enemigo)",
@@ -1075,7 +1074,6 @@
                 "Enemigos Derrotados (Planificado)": "Enemies Defeated (Planned)",
                 "Efectos de Estado": "Status Effects",
                 "Estado Crítico": "Critical State",
-                "Fin de Batalla": "Battle End",
                 "Reacciones del Equipo": "Party Reactions",
                 "Miscelánea": "Miscellaneous",
                 "Emboscada (Enemigo)": "Ambushed (Enemy)",
@@ -1517,6 +1515,43 @@
                     { id: "enemies-remaining-067", line: "¡Quedan cinco enemigos! ¡Aguantad!" },
                 ],
             },
+            {
+                category: "Progreso de Batalla",
+                subcategory: "Un Enemigo Huye",
+                group: null,
+                lines: [
+                    { id: "hand-runs-away-078", line: "¡Oye, se escapó! ¡Qué caradurismo el suyo!" },
+                    { id: "enemy-flees-277", line: "¡El enemigo ha huido! ¡Quedan dos!" },
+                    { id: "enemy-flees-278", line: "¡Oh, ha huido! ¡Quedan cuatro enemigos!" },
+                    { id: "enemy-flees-284", line: "¡Un enemigo ha huido! ¡Es nuestra oportunidad!" },
+                ],
+            },
+            {
+                category: "Progreso de Batalla",
+                subcategory: "Victoria",
+                group: null,
+                lines: [
+                    { id: "victory-179", line: "¡Genial, ganamos! ¡Lo logramos!" },
+                    { id: "victory-180", line: "¡Buen trabajo!" },
+                    { id: "victory-181", line: "¡Síiii! ¡Ganamos! ¡Felicidades chicos!" },
+                ],
+            },
+            {
+                category: "Progreso de Batalla",
+                subcategory: "Más Enemigos tras la Victoria",
+                group: null,
+                lines: [
+                    { id: "victory-more-enemies-268", line: "¡Ha aparecido otro enemigo! Uno, para ser exactos." },
+                    { id: "victory-more-enemies-269", line: "¿Eh? ¿Más enemigos? Dos, para ser exactos." },
+                    { id: "victory-more-enemies-270", line: "Dos refuerzos en el bando enemigo." },
+                    { id: "victory-more-enemies-271", line: "¡Tres más en el bando enemigo! ¡Seguid así!" },
+                    { id: "victory-more-enemies-272", line: "¿Qué? ¿Otra vez? ¡Tres enemigos más para vosotros!" },
+                    { id: "victory-more-enemies-273", line: "¡¿Esto es en serio?! ¡Cuatro enemigos nuevos!" },
+                    { id: "victory-more-enemies-274", line: "¡No puede ser! ¡Cuatro enemigos más por aquí!" },
+                    { id: "victory-more-enemies-275", line: "¡Aparecieron cinco enemigos! ¡Caray, esto es una locura!" },
+                    { id: "victory-more-enemies-276", line: "¡Refuerzos enemigos! ¿Eh... cinco? ¡Qué demonios!" },
+                ],
+            },
 
             {
                 category: "Acciones de Batalla",
@@ -1561,17 +1596,6 @@
                 group: null,
                 lines: [
                     { id: "rare-hand-encountered-077", line: "¡Ooh, uno raro! ¡No lo dejes escapar!" },
-                ],
-            },
-            {
-                category: "Acciones de Batalla",
-                subcategory: "Un Enemigo Huye",
-                group: null,
-                lines: [
-                    { id: "hand-runs-away-078", line: "¡Oye, se escapó! ¡Qué caradurismo el suyo!" },
-                    { id: "enemy-flees-277", line: "¡El enemigo ha huido! ¡Quedan dos!" },
-                    { id: "enemy-flees-278", line: "¡Oh, ha huido! ¡Quedan cuatro enemigos!" },
-                    { id: "enemy-flees-284", line: "¡Un enemigo ha huido! ¡Es nuestra oportunidad!" },
                 ],
             },
             {
@@ -1774,33 +1798,6 @@
             },
 
             {
-                category: "Fin de Batalla",
-                subcategory: "Victoria",
-                group: null,
-                lines: [
-                    { id: "victory-179", line: "¡Genial, ganamos! ¡Lo logramos!" },
-                    { id: "victory-180", line: "¡Buen trabajo!" },
-                    { id: "victory-181", line: "¡Síiii! ¡Ganamos! ¡Felicidades chicos!" },
-                ],
-            },
-            {
-                category: "Fin de Batalla",
-                subcategory: "Más Enemigos tras la Victoria",
-                group: null,
-                lines: [
-                    { id: "victory-more-enemies-268", line: "¡Ha aparecido otro enemigo! Uno, para ser exactos." },
-                    { id: "victory-more-enemies-269", line: "¿Eh? ¿Más enemigos? Dos, para ser exactos." },
-                    { id: "victory-more-enemies-270", line: "Dos refuerzos en el bando enemigo." },
-                    { id: "victory-more-enemies-271", line: "¡Tres más en el bando enemigo! ¡Seguid así!" },
-                    { id: "victory-more-enemies-272", line: "¿Qué? ¿Otra vez? ¡Tres enemigos más para vosotros!" },
-                    { id: "victory-more-enemies-273", line: "¡¿Esto es en serio?! ¡Cuatro enemigos nuevos!" },
-                    { id: "victory-more-enemies-274", line: "¡No puede ser! ¡Cuatro enemigos más por aquí!" },
-                    { id: "victory-more-enemies-275", line: "¡Aparecieron cinco enemigos! ¡Caray, esto es una locura!" },
-                    { id: "victory-more-enemies-276", line: "¡Refuerzos enemigos! ¿Eh... cinco? ¡Qué demonios!" },
-                ],
-            },
-
-            {
                 category: "Reacciones del Equipo",
                 subcategory: "Golpe Crítico Físico",
                 group: null,
@@ -1869,7 +1866,7 @@
                 group: null,
                 lines: [
                     { id: "enemy-defeated-1-197", line: "¡Vamos senpai! ¡Eres el mejor!" },
-                    { id: "enemy-defeated-1-198", line: "¡Enemigo derrotado! ¡Buen comienzo! (Protagonista)" },
+                    { id: "enemy-defeated-1-198", line: "¡Enemigo derrotado! ¡Buen comienzo!" },
                     { id: "enemy-defeated-1-199", line: "¡Eso es senpai! ¡Me tienes muy animada!" },
                     { id: "enemy-defeated-1-200", line: "¡Vaya! ¡Eso estuvo increíble Yosuke-senpai!" },
                     { id: "enemy-defeated-1-201", line: "¿Yosuke-senpai estuvo guay? ¡No puede ser!" },
