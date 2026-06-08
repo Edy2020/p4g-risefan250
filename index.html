@@ -925,6 +925,7 @@
                 "Emboscada (Enemigo)": "Emboscada (Enemigo)",
                 "Ataque Preventivo": "Ataque Preventivo",
                 "Encuentro Normal": "Encuentro Normal",
+                "Encuentro con el Reaper": "Encuentro con el Reaper",
                 "Escaneo de Debilidades e Inmunidades": "Escaneo de Debilidades e Inmunidades",
                 "Enemigos Restantes": "Enemigos Restantes",
                 "Modo Asalto": "Modo Asalto",
@@ -933,6 +934,7 @@
                 "Protagonista Se Levanta": "Protagonista Se Levanta",
                 "Mano Rara Encontrada": "Mano Rara Encontrada",
                 "Un Enemigo Huye": "Un Enemigo Huye",
+                "Ataque Combinado": "Ataque Combinado",
                 "Dos Enemigos Derrotados": "Dos Enemigos Derrotados",
                 "Tres Enemigos Derrotados": "Tres Enemigos Derrotados",
                 "Cuatro Enemigos Derrotados": "Cuatro Enemigos Derrotados",
@@ -970,6 +972,7 @@
                 "Emboscada (Enemigo)": "Ambushed (Enemy)",
                 "Ataque Preventivo": "Preemptive Strike",
                 "Encuentro Normal": "Normal Encounter",
+                "Encuentro con el Reaper": "Reaper Encounter",
                 "Escaneo de Debilidades e Inmunidades": "Weakness & Immunity Scan",
                 "Enemigos Restantes": "Enemies Remaining",
                 "Modo Asalto": "Rush Mode",
@@ -978,6 +981,7 @@
                 "Protagonista Se Levanta": "Protagonist Stands Up",
                 "Mano Rara Encontrada": "Rare Hand Encountered",
                 "Un Enemigo Huye": "An Enemy Flees",
+                "Ataque Combinado": "All Out Attack",
                 "Dos Enemigos Derrotados": "Two Enemies Defeated",
                 "Tres Enemigos Derrotados": "Three Enemies Defeated",
                 "Cuatro Enemigos Derrotados": "Four Enemies Defeated",
@@ -1084,6 +1088,10 @@
             "hand-runs-away-078": "Hey it ran away! The nerve of that thing!",
             "enemy-flees-277": "The enemy ran away! There's two left!",
             "enemy-flees-278": "Aww it ran away! Four enemies remaining!",
+            "all-out-attack-279": "It's showtime! Are you ready?",
+            "all-out-attack-280": "Places everyone! And, action!",
+            "all-out-attack-281": "Is everyone ready? Get set... Go! Knock 'em out!",
+            "all-out-attack-282": "Go! Beat 'em up!",
             "two-enemies-down-079": "Two enemies down! Keep going senpai!",
             "two-enemies-down-080": "Two enemies down! Good going Yosuke-senpai!",
             "two-enemies-down-081": "Two enemies down! Do it again, Chie-senpai!",
@@ -1281,7 +1289,8 @@
             "victory-more-enemies-273": "Is this for real?! Four new enemies!",
             "victory-more-enemies-274": "No way! Four more enemies are here!",
             "victory-more-enemies-275": "Five enemies appeared! Gee, this is nuts!",
-            "victory-more-enemies-276": "Enemy reinforcements! Huh-- five? What the heck!"
+            "victory-more-enemies-276": "Enemy reinforcements! Huh-- five? What the heck!",
+            "reaper-encounter-283": "What is this thing? It feels really bad..."
         };
 
         const RISE_DATA = [
@@ -1335,6 +1344,14 @@
                     { id: "normal-encounter-028", line: "Cuatro enemigos en el campo. ¡A por ello!" },
                     { id: "normal-encounter-029", line: "Hay cinco enemigos. No os dejen atrapar." },
                     { id: "normal-encounter-030", line: "C-cinco enemigos en el campo. ¡Con cuidado!" },
+                ],
+            },
+            {
+                category: "Inicio de Batalla",
+                subcategory: "Encuentro con el Reaper",
+                group: null,
+                lines: [
+                    { id: "reaper-encounter-283", line: "¿Qué es esta cosa? Da muy mala espina..." },
                 ],
             },
 
@@ -1444,6 +1461,17 @@
                     { id: "hand-runs-away-078", line: "¡Oye, se escapó! ¡Qué caradurismo el suyo!" },
                     { id: "enemy-flees-277", line: "¡El enemigo ha huido! ¡Quedan dos!" },
                     { id: "enemy-flees-278", line: "¡Oh, ha huido! ¡Quedan cuatro enemigos!" },
+                ],
+            },
+            {
+                category: "Acciones de Batalla",
+                subcategory: "Ataque Combinado",
+                group: null,
+                lines: [
+                    { id: "all-out-attack-279", line: "¡Empieza la función! ¿Estáis listos?" },
+                    { id: "all-out-attack-280", line: "¡A sus puestos! ¡Y... acción!" },
+                    { id: "all-out-attack-281", line: "¿Estáis todos listos? Preparados... ¡Adelante! ¡Noqueadlos!" },
+                    { id: "all-out-attack-282", line: "¡Vamos! ¡Dadles una paliza!" },
                 ],
             },
 
