@@ -933,6 +933,9 @@
             <div class="hero-actions">
                 <button id="btn-expand-all" class="action-btn" type="button">Expandir Todo</button>
                 <button id="btn-collapse-all" class="action-btn" type="button">Colapsar Todo</button>
+                <button id="btn-export" class="action-btn" type="button">Exportar</button>
+                <button id="btn-import" class="action-btn" type="button">Importar</button>
+                <input type="file" id="input-import" class="hidden" accept=".json">
                 <button id="btn-reset" class="action-btn action-btn--danger" type="button">Reiniciar</button>
             </div>
 
@@ -992,7 +995,11 @@
                 charKanji: "Kanji",
                 charTeddie: "Teddie",
                 charNaoto: "Naoto",
-                charGeneral: "Otros"
+                charGeneral: "Otros",
+                exportProgress: "Exportar",
+                importProgress: "Importar",
+                importSuccess: "Progreso importado con éxito.",
+                importError: "Error al importar el archivo. Asegúrate de que sea un archivo de progreso válido.",
             },
             en: {
                 subtitle: "Rise Kujikawa — Navigator Lines Tracker",
@@ -1015,7 +1022,11 @@
                 charKanji: "Kanji",
                 charTeddie: "Teddie",
                 charNaoto: "Naoto",
-                charGeneral: "Others"
+                charGeneral: "Others",
+                exportProgress: "Export",
+                importProgress: "Import",
+                importSuccess: "Progress successfully imported.",
+                importError: "Error importing file. Make sure it is a valid progress file.",
             }
         };
 
@@ -1957,6 +1968,12 @@
             const btnReset = document.getElementById('btn-reset');
             if (btnReset) btnReset.textContent = texts.reset;
 
+            const btnExport = document.getElementById('btn-export');
+            if (btnExport) btnExport.textContent = texts.exportProgress;
+
+            const btnImport = document.getElementById('btn-import');
+            if (btnImport) btnImport.textContent = texts.importProgress;
+
             const searchInput = document.getElementById('search-input');
             if (searchInput) {
                 searchInput.placeholder = texts.searchPlaceholder;
@@ -2369,11 +2386,64 @@
             });
         }
 
+        function exportProgress() {
+            const blob = new Blob([JSON.stringify([...heardSet])], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "p4g_rise_progress.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function handleImport(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    if (Array.isArray(imported)) {
+                        heardSet = new Set(imported);
+                        saveState();
+                        renderTracker();
+                        updateProgress();
+                        
+                        const searchInput = document.getElementById('search-input');
+                        if (searchInput && searchInput.value) {
+                            applyFilters();
+                        }
+                        
+                        alert(UI_TEXT[currentLang].importSuccess);
+                    } else {
+                        alert(UI_TEXT[currentLang].importError);
+                    }
+                } catch (err) {
+                    alert(UI_TEXT[currentLang].importError);
+                }
+                event.target.value = '';
+            };
+            reader.readAsText(file);
+        }
+
         function initControls() {
             document.getElementById('btn-expand-all')
                 ?.addEventListener('click', openAll);
             document.getElementById('btn-collapse-all')
                 ?.addEventListener('click', collapseAll);
+
+            document.getElementById('btn-export')
+                ?.addEventListener('click', exportProgress);
+
+            const btnImport = document.getElementById('btn-import');
+            const inputImport = document.getElementById('input-import');
+            if (btnImport && inputImport) {
+                btnImport.addEventListener('click', () => inputImport.click());
+                inputImport.addEventListener('change', handleImport);
+            }
         }
 
         let activeCharFilter = 'all';
