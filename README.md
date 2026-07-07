@@ -1,4 +1,4 @@
-# <img src="https://megatenwiki.com/images/0/02/P4G_Achievement_Icon_17.jpg?20240508024320" width="36" height="36" align="top" style="border-radius: 4px;"> Hardcore Risette Fan — P4G Tracker
+# <img src="https://static.wikia.nocookie.net/megamitensei/images/f/fe/Persona_4_Logo_White.png/revision/latest?cb=20210606140945" width="36" height="36" align="top" style="border-radius: 4px;"> Hardcore Risette Fan — P4G Tracker
 
 ![Persona 4 Golden](https://img.shields.io/badge/Persona%204%20Golden-Hardcore%20Risette%20Fan-F5C400?style=for-the-badge&labelColor=0D0D0D&logo=sega&logoColor=F5C400)
 ![HTML5 & CSS3 & JS](https://img.shields.io/badge/Tech-Vanilla%20HTML%2FCSS%2FJS-3D3D3D?style=for-the-badge&labelColor=1A1A1A)
