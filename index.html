@@ -10,6 +10,10 @@
 
     <title>Hardcore Risette Fan — P4G Tracker</title>
 
+    <link rel="icon" href="https://megatenwiki.com/images/0/02/P4G_Achievement_Icon_17.jpg?20240508024320" type="image/jpeg">
+    <link rel="shortcut icon" href="https://megatenwiki.com/images/0/02/P4G_Achievement_Icon_17.jpg?20240508024320" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://megatenwiki.com/images/0/02/P4G_Achievement_Icon_17.jpg?20240508024320">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
@@ -84,6 +88,16 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .brand-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--black);
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .brand-tag {
@@ -517,6 +531,17 @@
             font-size: 2rem;
             line-height: 1;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .achievement-img {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--black);
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
         }
 
         .achievement-text {
@@ -879,6 +904,7 @@
     <header id="site-header">
         <div class="header-inner">
             <div class="header-brand">
+                <img src="https://megatenwiki.com/images/0/02/P4G_Achievement_Icon_17.jpg?20240508024320" alt="Hardcore Risette Fan Icon" class="brand-icon">
                 <span class="brand-tag">P4G</span>
                 <h1 class="brand-title">Hardcore Risette Fan</h1>
             </div>
@@ -949,7 +975,9 @@
 
     <div id="achievement-banner" class="achievement-banner hidden" aria-hidden="true" role="status">
         <div class="achievement-inner">
-            <div class="achievement-icon">★</div>
+            <div class="achievement-icon">
+                <img src="https://megatenwiki.com/images/0/02/P4G_Achievement_Icon_17.jpg?20240508024320" alt="Logro Hardcore Risette Fan" class="achievement-img">
+            </div>
             <div class="achievement-text">
                 <strong>¡LOGRO DESBLOQUEADO!</strong>
                 <span>Hardcore Risette Fan</span>
